@@ -1,0 +1,16 @@
+a:4:{s:8:"template";s:6:"kristo";s:4:"mods";a:5:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:7:"primary";i:35;s:10:"footermenu";i:59;}s:18:"custom_css_post_id";i:1934;s:16:"sidebars_widgets";a:2:{s:4:"time";i:1663648796;s:4:"data";a:6:{s:19:"wp_inactive_widgets";a:1:{i:0;s:8:"block-12";}s:9:"sidebar-1";a:3:{i:0;s:7:"block-2";i:1;s:7:"block-6";i:2;s:8:"block-15";}s:15:"footer-widget-1";a:3:{i:0;s:7:"block-7";i:1;s:7:"block-8";i:2;s:8:"block-14";}s:15:"footer-widget-2";a:1:{i:0;s:10:"nav_menu-2";}s:15:"footer-widget-3";a:1:{i:0;s:10:"nav_menu-3";}s:15:"footer-widget-4";a:3:{i:0;s:7:"block-9";i:1;s:8:"block-13";i:2;s:8:"block-10";}}}s:11:"custom_logo";i:1587;}s:7:"options";a:2:{s:9:"site_icon";s:4:"1782";s:23:"nav_menus_created_posts";a:0:{}}s:6:"wp_css";s:333:"#kristo_author_box .row .col-lg-3:first-child{
+	display: none; 
+}
+
+@media (min-width: 992px) {
+	.elementor-element.elementor-element-5eeca05.e-con-full.e-flex.e-con.e-parent.e-lazyloaded {
+		min-width: 1260px !important;
+		position: relative;
+		left: -20px;
+	}
+	
+	body.single-post .sidebar.blog-sidebar {
+		padding-top: 227px;
+	}
+} 
+";}

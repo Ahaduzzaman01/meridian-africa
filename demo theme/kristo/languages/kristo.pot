@@ -1,0 +1,766 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kristo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-20 06:14+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.2; wp-6.0.2\n"
+"X-Domain: kristo"
+
+#: inc/template-tags.php:40
+msgid " "
+msgstr ""
+
+#: inc/template-tags.php:273
+msgid " Previous"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:168
+msgid "#"
+msgstr ""
+
+#: inc/template-tags.php:104
+msgid "% Comments"
+msgstr ""
+
+#. 1: list of categories.
+#. 1: list of tags.
+#: inc/template-tags.php:43 inc/template-tags.php:98 inc/template-tags.php:112 
+#: inc/template-tags.php:356
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#. 1: date, 2: time
+#: inc/template-tags.php:246
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: comments.php:51 comments.php:81
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: inc/template-tags.php:249
+msgid "(Edit)"
+msgstr ""
+
+#: inc/template-tags.php:95
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:104
+msgid "0 Comments"
+msgstr ""
+
+#: inc/template-tags.php:104
+msgid "1 Comment"
+msgstr ""
+
+#: 404.php:20
+msgid "404"
+msgstr ""
+
+#: inc/template-functions.php:235
+msgid "About Author"
+msgstr ""
+
+#: functions.php:151
+msgid "Add Footer  widgets here."
+msgstr ""
+
+#: functions.php:161 functions.php:171 functions.php:181
+msgid "Add Footer widgets here."
+msgstr ""
+
+#: archive.php:22
+msgid "Archives"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:81
+msgid "Back Top Options"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:460
+msgid "Backup"
+msgstr ""
+
+#: index.php:31 inc/theme-options/theme-options.php:223
+msgid "Blog"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:229
+msgid "Blog Options"
+msgstr ""
+
+#: index.php:35 inc/theme-options/theme-options.php:244
+msgid "Blog Page"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:251
+msgid "Blog Page Spacing"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:243
+msgid "Blog Page Title"
+msgstr ""
+
+#: functions.php:140
+msgid "Blog Sidebar Widget."
+msgstr ""
+
+#: inc/theme-options/theme-options.php:320
+msgid "Blog Single Page Option"
+msgstr ""
+
+#: functions.php:138
+msgid "Blog widget area"
+msgstr ""
+
+#: inc/theme-options/theme-customizer.php:137
+msgid "Body Background Color"
+msgstr ""
+
+#: inc/theme-options/theme-customizer.php:147
+msgid "Body Text Color"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:234
+msgid "Breadcrumb"
+msgstr ""
+
+#: comments.php:147
+msgid "Cancel reply"
+msgstr ""
+
+#: category.php:25 category.php:30 inc/theme-options/theme-options.php:272
+msgid "Category"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:294
+msgid "Category Page Spacing"
+msgstr ""
+
+#: inc/theme-options/theme-metabox.php:23
+msgid "Catgeory Options"
+msgstr ""
+
+#: inc/theme-options/theme-customizer.php:107
+msgid "Choose Theme Color"
+msgstr ""
+
+#: comments.php:37
+msgid "Comment "
+msgstr ""
+
+#: comments.php:48 comments.php:78
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:35
+msgid "Comments "
+msgstr ""
+
+#: comments.php:91
+msgid "Comments are closed."
+msgstr ""
+
+#: inc/required-plugins.php:86
+msgid "Contact Form 7"
+msgstr ""
+
+#: footer.php:77
+msgid "Copyright &copy; Kristo 2022. All rights reserved"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:447
+msgid "Copyright Area Text"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:182
+msgid ""
+"Do You want to Show Header Social Icons. Social option only for Hedaer Style "
+"2"
+msgstr ""
+
+#: inc/required-plugins.php:65
+msgid "Elementor"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:236
+msgid "Enable Breadcrumb"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:150
+msgid "Enable or Disable Header Button"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:75
+msgid "Enable or Disable Preloader"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:89
+msgid "Enable or Disable scroll button"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:142
+msgid "Enable or Disable Search Bar"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:184
+msgid "Enable or Disable Social Bar"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:73
+msgid "Enable Preloader"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:128
+msgid "Enable Sticky Header For Header Style 1"
+msgstr ""
+
+#: comments.php:127
+msgid "Enter Comments"
+msgstr ""
+
+#: comments.php:113
+msgid "Enter Email"
+msgstr ""
+
+#: comments.php:112
+msgid "Enter Name"
+msgstr ""
+
+#: comments.php:114
+msgid "Enter Website"
+msgstr ""
+
+#: inc/template-functions.php:198
+msgid "Facebook Profile Link"
+msgstr ""
+
+#: inc/theme-options/theme-customizer.php:156 
+#: inc/theme-options/theme-options.php:422
+msgid "Footer"
+msgstr ""
+
+#: inc/theme-options/theme-customizer.php:163
+msgid "Footer Background Color"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:442
+msgid "Footer Copyright Area Options"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:449
+msgid "Footer Copyright Text"
+msgstr ""
+
+#: functions.php:89
+msgid "Footer Menu"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:428
+msgid "Footer Options"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:433
+msgid "Footer Right Menu"
+msgstr ""
+
+#: functions.php:179
+msgid "Footer Widget Area Four"
+msgstr ""
+
+#: functions.php:149
+msgid "Footer Widget Area One"
+msgstr ""
+
+#: functions.php:169
+msgid "Footer Widget Area Three"
+msgstr ""
+
+#: functions.php:159
+msgid "Footer Widget Area Two"
+msgstr ""
+
+#. Name of the template
+msgid "Full Width Template"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:32
+msgid "General"
+msgstr ""
+
+#: 404.php:26
+msgid "Go Home Page"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:101
+msgid "Header"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:167
+msgid "Header Button Link"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:158
+msgid "Header Button Text"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:107
+msgid "Header Layout"
+msgstr ""
+
+#: category.php:24 archive.php:21 index.php:30
+msgid "Home"
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://promisingdev.com"
+msgstr ""
+
+#. URI of the theme
+msgid "http://promisingdev.com/kristo"
+msgstr ""
+
+#: inc/template-functions.php:200
+msgid "Instagram"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:203
+msgid "Inter Social Url"
+msgstr ""
+
+#: template-parts/content-none.php:3
+msgid "It looks like nothing was found here. Maybe try a search?"
+msgstr ""
+
+#. Name of the theme
+msgid "Kristo"
+msgstr ""
+
+#: inc/theme-options/theme-customizer.php:101
+msgid "Kristo Color Settings"
+msgstr ""
+
+#: inc/required-plugins.php:71
+msgid "Kristo Extra"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:26
+msgid "Kristo Theme Options"
+msgstr ""
+
+#: inc/theme-options/theme-customizer.php:24
+msgid "Kristo Typography Options"
+msgstr ""
+
+#: comments.php:145
+msgid "Leave a Reply"
+msgstr ""
+
+#: comments.php:146
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: inc/template-tags.php:352
+msgctxt "list item separator"
+msgid " "
+msgstr ""
+
+#. used between list items, there is a space after the comma
+#: inc/template-tags.php:108
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#: comments.php:140
+msgid "Log out of this account"
+msgstr ""
+
+#: comments.php:140
+msgid "Log out?"
+msgstr ""
+
+#: comments.php:135
+msgid "logged in"
+msgstr ""
+
+#: comments.php:140
+msgid "Logged in as"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:43
+msgid "Main Logo"
+msgstr ""
+
+#: inc/required-plugins.php:80
+msgid "MC4WP: Mailchimp for WordPress"
+msgstr ""
+
+#. Description of the theme
+msgid "Modern Magazine WordPress Theme"
+msgstr ""
+
+#: inc/template-tags.php:266
+msgid "More pages: "
+msgstr ""
+
+#: inc/theme-options/theme-metabox.php:116
+msgid "Nav Menu Option"
+msgstr ""
+
+#: comments.php:54 comments.php:84
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: inc/template-tags.php:272
+msgid "Next "
+msgstr ""
+
+#: inc/theme-options/theme-options.php:361
+msgid "Next Post"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:360
+msgid "Next Post Text"
+msgstr ""
+
+#: template-parts/content-none.php:2
+msgid "Nothing found!"
+msgstr ""
+
+#: inc/theme-options/theme-metabox.php:105
+msgid "Page Options"
+msgstr ""
+
+#: template-parts/content-page.php:16
+msgid "Pages:"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:198
+msgid "Pick Up Your Social Icon"
+msgstr ""
+
+#: inc/template-functions.php:201
+msgid "Pinterest"
+msgstr ""
+
+#. %s: post author.
+#: inc/template-tags.php:58 inc/template-tags.php:91
+#, php-format
+msgctxt "post author"
+msgid "%s"
+msgstr ""
+
+#: comments.php:148
+msgid "Post Comment"
+msgstr ""
+
+#. %s: post author.
+#: inc/template-tags.php:103
+#, php-format
+msgctxt "post comment"
+msgid "%s"
+msgstr ""
+
+#. %s: post date.
+#: inc/template-tags.php:26 inc/template-tags.php:85
+#, php-format
+msgctxt "post date"
+msgid "%s"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:401
+msgid "Post Navigation"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:67
+msgid "Preloader"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:353
+msgid "Previous Post"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:352
+msgid "Previous Post Text"
+msgstr ""
+
+#: functions.php:88
+msgid "Primary Menu"
+msgstr ""
+
+#. Author of the theme
+msgid "Promising Dev"
+msgstr ""
+
+#: template-parts/single/related-posts.php:17 
+#: inc/theme-options/theme-options.php:410
+msgid "Related Posts"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:192
+msgid "Repeater"
+msgstr ""
+
+#: inc/template-tags.php:235
+msgid "says:"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:87
+msgid "Scroll Top Button"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:135
+msgid "Search Bar & Header Button"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:140
+msgid "Search Bar Display In Header"
+msgstr ""
+
+#: searchform.php:13
+msgid "Search here..."
+msgstr ""
+
+#: inc/template-tags.php:297
+msgid "Search Keyword"
+msgstr ""
+
+#: search.php:20
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/headers/nav-style-one.php:109 
+#: template-parts/headers/nav-style-two.php:150
+msgid "Search....."
+msgstr ""
+
+#: inc/theme-options/theme-metabox.php:46
+msgid "Select Category Background Color"
+msgstr ""
+
+#: inc/theme-options/theme-metabox.php:37
+msgid "Select Category Color"
+msgstr ""
+
+#: inc/theme-options/theme-metabox.php:63 
+#: inc/theme-options/theme-options.php:283
+msgid "Select Category Layout"
+msgstr ""
+
+#: inc/theme-options/theme-metabox.php:123 
+#: inc/theme-options/theme-options.php:114
+msgid "Select Header Navigation Style"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:326
+msgid "Select Single Blog Style"
+msgstr ""
+
+#: inc/theme-options/theme-customizer.php:31
+msgid "Set Body Font"
+msgstr ""
+
+#: inc/theme-options/theme-customizer.php:62
+msgid "Set Heading Font"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:53
+msgid "Set Logo Width"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:59
+msgid "Set Logo Width in px. Default Width 142px."
+msgstr ""
+
+#: inc/theme-options/theme-customizer.php:127
+msgid "Set Preloader Background Color"
+msgstr ""
+
+#: template-parts/default-menu.php:8
+msgid "Set Up Menu"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:391
+msgid "Show Author Box"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:369
+msgid "Show Category Name"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:367
+msgid "Show Catgeory"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:148
+msgid "Show Header Button"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:399
+msgid "Show Navigation"
+msgstr ""
+
+#: inc/theme-options/theme-metabox.php:134
+msgid "Show Page Title"
+msgstr ""
+
+#: inc/theme-options/theme-metabox.php:137
+msgid "Show Page Title Bar"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:377
+msgid "Show Post Meta Infos"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:375
+msgid "Show Post Metas"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:385
+msgid "Show Post Tags"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:408
+msgid "Show Related Posts"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:383
+msgid "Show Tags"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:159
+msgid "Sign Up"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:314
+msgid "Single"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:337
+msgid "Single Blog Spacing"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:393
+msgid "Single Post Author"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:38
+msgid "Site Logo"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:177
+msgid "Social Options"
+msgstr ""
+
+#: 404.php:23
+msgid "Sorry!...Page Not Found!"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:126
+msgid "Sticky Header"
+msgstr ""
+
+#: inc/template-tags.php:356
+msgid "Tags:"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:278
+msgid ""
+"Theme Category Options. You can Customize Each Catgeory by Editing "
+"Individually."
+msgstr ""
+
+#: inc/theme-options/theme-customizer.php:113
+msgid "Theme Main Color"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:21
+msgid "Theme Option"
+msgstr ""
+
+#: inc/theme-options/theme-metabox.php:144
+msgid "Theme Page Spacing"
+msgstr ""
+
+#: inc/theme-options/theme-customizer.php:120
+msgid "Theme Seconday or Hover Color"
+msgstr ""
+
+#: comments.php:135
+msgid "to post a comment."
+msgstr ""
+
+#: inc/template-functions.php:199
+msgid "Twitter Profile"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:245
+msgid "Type Blog Page Title"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:169
+msgid "Type Header Button Link"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:160
+msgid "Type Header Button text"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:362
+msgid "Type Next Post Link Title"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:354
+msgid "Type Previous Post Link Title"
+msgstr ""
+
+#: inc/theme-options/theme-metabox.php:57
+msgid "Upload"
+msgstr ""
+
+#: inc/theme-options/theme-metabox.php:92
+msgid "Upload Video For Post"
+msgstr ""
+
+#: inc/theme-options/theme-metabox.php:93
+msgid "Upload Video Post"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:46
+msgid "Upload Your Static Logo Image on Header Static"
+msgstr ""
+
+#: inc/theme-options/theme-metabox.php:79
+msgid "Video Post Format Options"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:435
+msgid "You can set Yes or No to show Footer menu"
+msgstr ""
+
+#: comments.php:135
+msgid "You must be"
+msgstr ""
+
+#: inc/template-tags.php:239
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-functions.php:202
+msgid "Youtube Profile"
+msgstr ""

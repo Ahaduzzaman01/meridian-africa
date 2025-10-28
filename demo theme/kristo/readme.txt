@@ -1,0 +1,17 @@
+/*
+Theme Name: Kristo
+Theme URI: https://themeforest.net/item/kristo-modern-magazine-wordpress-theme/38022182?s_rank=3
+Author: Promising-Themes
+Author URI: https://themeforest.net/user/promising-themes
+Description: Kristo is a trendy & attractive Magazine WordPress Theme. It is perfect for any type of News/Magazine or any category like Blogs, Sports, Fashion, Tech, Soccer, Politics, Videos, Travel, Style, Beauty, Health, Yoga Magazine sites etc. It’s includes everything as you needed for News/Magazine. It is a clean, modern, user friendly, fast-loading, customizable, flexible and functional WordPress theme to bang start Your online news magazine Today!
+Version: 3.5
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: kristo
+Tags: two-columns, three-columns, four-columns, right-sidebar, custom-menu, featured-images, gaming demo, custom footer, blog theme, grid layout, modern design, modern theme
+*/
+
+== Copyright ==
+
+Kristo Blog Magazine Wordpress Theme, (C)Promising-Themes
+Kristo is distributed under the terms of the GNU GPL.
