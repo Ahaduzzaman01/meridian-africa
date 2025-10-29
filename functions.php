@@ -13,6 +13,20 @@ if ( ! defined( '_S_VERSION' ) ) {
 }
 
 /**
+ * Define theme constants following demo theme pattern
+ */
+define( 'MERIDIAN_DEV_MODE', true );
+$meridian_version = MERIDIAN_DEV_MODE ? time() : _S_VERSION;
+define( 'MERIDIAN_VERSION', $meridian_version );
+define( 'MERIDIAN_THEME_URI', get_template_directory_uri() );
+define( 'MERIDIAN_THEME_DIR', get_template_directory() );
+define( 'MERIDIAN_ASSETS', MERIDIAN_THEME_URI . '/assets' );
+define( 'MERIDIAN_CSS', MERIDIAN_ASSETS . '/css' );
+define( 'MERIDIAN_JS', MERIDIAN_ASSETS . '/js' );
+define( 'MERIDIAN_IMG', MERIDIAN_ASSETS . '/images' );
+define( 'MERIDIAN_INC', MERIDIAN_THEME_DIR . '/inc' );
+
+/**
  * Sets up theme defaults and registers support for various WordPress features.
  *
  * Note that this function is hooked into the after_setup_theme hook, which
@@ -47,7 +61,7 @@ function meridian_africa_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'meridian-africa' ),
+			'primary' => esc_html__( 'Primary Menu', 'meridian-africa' ),
 		)
 	);
 
@@ -136,9 +150,23 @@ add_action( 'widgets_init', 'meridian_africa_widgets_init' );
  * Enqueue scripts and styles.
  */
 function meridian_africa_scripts() {
-	wp_enqueue_style( 'meridian-africa-style', get_stylesheet_uri(), array(), _S_VERSION );
+	// Google Fonts
+	wp_enqueue_style( 'meridian-google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap', array(), null );
+
+	// Font Awesome
+	wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0' );
+
+	// Agrovue Header CSS
+	wp_enqueue_style( 'agrovue-header', MERIDIAN_CSS . '/agrovue-header.css', array(), MERIDIAN_VERSION );
+
+	// Main theme stylesheet
+	wp_enqueue_style( 'meridian-africa-style', get_stylesheet_uri(), array( 'agrovue-header' ), _S_VERSION );
 	wp_style_add_data( 'meridian-africa-style', 'rtl', 'replace' );
 
+	// Agrovue Header JavaScript
+	wp_enqueue_script( 'agrovue-header', MERIDIAN_JS . '/agrovue-header.js', array( 'jquery' ), MERIDIAN_VERSION, true );
+
+	// Original navigation script
 	wp_enqueue_script( 'meridian-africa-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -166,3 +194,63 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Custom Navigation Walker for Agrovue Header
+ */
+require get_template_directory() . '/inc/class-nav-walker.php';
+
+/**
+ * Add Customizer settings for header button
+ */
+function meridian_africa_header_customizer( $wp_customize ) {
+	// Add Header Settings Section
+	$wp_customize->add_section( 'meridian_header_settings', array(
+		'title'    => __( 'Header Settings', 'meridian-africa' ),
+		'priority' => 30,
+	) );
+
+	// Header Button Enable/Disable
+	$wp_customize->add_setting( 'header_btn_enable', array(
+		'default'           => true,
+		'sanitize_callback' => 'meridian_africa_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'header_btn_enable', array(
+		'label'   => __( 'Enable Header Button', 'meridian-africa' ),
+		'section' => 'meridian_header_settings',
+		'type'    => 'checkbox',
+	) );
+
+	// Header Button Text
+	$wp_customize->add_setting( 'header_btn_text', array(
+		'default'           => 'Login',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( 'header_btn_text', array(
+		'label'   => __( 'Header Button Text', 'meridian-africa' ),
+		'section' => 'meridian_header_settings',
+		'type'    => 'text',
+	) );
+
+	// Header Button Link
+	$wp_customize->add_setting( 'header_btn_link', array(
+		'default'           => 'https://agrovue.io/register',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+
+	$wp_customize->add_control( 'header_btn_link', array(
+		'label'   => __( 'Header Button Link', 'meridian-africa' ),
+		'section' => 'meridian_header_settings',
+		'type'    => 'url',
+	) );
+}
+add_action( 'customize_register', 'meridian_africa_header_customizer' );
+
+/**
+ * Sanitize checkbox for customizer
+ */
+function meridian_africa_sanitize_checkbox( $checked ) {
+	return ( ( isset( $checked ) && true === $checked ) ? true : false );
+}
