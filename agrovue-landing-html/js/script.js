@@ -531,7 +531,7 @@ const platformModalData = {
         section1Title: "Comprehensive Crop Intelligence",
         section1Description: "Our advanced classification system accurately identifies major crop types including maize, rice, wheat, cassava, sorghum, millet, groundnuts, and various vegetables. Specifically designed for African agricultural systems, the platform recognizes intercropping patterns, mixed farming practices, and smallholder field characteristics that are common across the continent.",
         section2Title: "Proven Accuracy & Reliability",
-        section2Description: "Built on machine learning models trained with extensive ground truth data from multiple African regions, our system achieves over 90% accuracy in crop identification. The technology supports agricultural planning, subsidy targeting, market forecasting, and food security assessments by providing reliable crop distribution data at scale.",
+        section2Description: "Built on machine learning models trained with extensive ground truth data from multiple African regions, our system achieves over 80% accuracy in crop identification. The technology supports agricultural planning, subsidy targeting, market forecasting, and food security assessments by providing reliable crop distribution data at scale.",
         // image: "image/two.png"
     },
     3: {
