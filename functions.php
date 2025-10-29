@@ -15,9 +15,7 @@ if ( ! defined( '_S_VERSION' ) ) {
 /**
  * Define theme constants following demo theme pattern
  */
-define( 'MERIDIAN_DEV_MODE', true );
-$meridian_version = MERIDIAN_DEV_MODE ? time() : _S_VERSION;
-define( 'MERIDIAN_VERSION', $meridian_version );
+define( 'MERIDIAN_VERSION', _S_VERSION );
 define( 'MERIDIAN_THEME_URI', get_template_directory_uri() );
 define( 'MERIDIAN_THEME_DIR', get_template_directory() );
 define( 'MERIDIAN_ASSETS', MERIDIAN_THEME_URI . '/assets' );
