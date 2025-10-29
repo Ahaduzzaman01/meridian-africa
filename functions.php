@@ -148,17 +148,11 @@ add_action( 'widgets_init', 'meridian_africa_widgets_init' );
  * Enqueue scripts and styles.
  */
 function meridian_africa_scripts() {
-	// Google Fonts
-	wp_enqueue_style( 'meridian-google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap', array(), null );
-
 	// Font Awesome
 	wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0' );
 
-	// Agrovue Header CSS
-	wp_enqueue_style( 'agrovue-header', MERIDIAN_CSS . '/agrovue-header.css', array(), MERIDIAN_VERSION );
-
-	// Main theme stylesheet
-	wp_enqueue_style( 'meridian-africa-style', get_stylesheet_uri(), array( 'agrovue-header' ), _S_VERSION );
+	// Main theme stylesheet (now includes all agrovue-header styles and Google Fonts import)
+	wp_enqueue_style( 'meridian-africa-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'meridian-africa-style', 'rtl', 'replace' );
 
 	// Agrovue Header JavaScript
