@@ -91,6 +91,8 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'frameworks-marquee',
 				'verification-crisis',
 				'why-now',
+				'system-architecture-solution',
+				'platform-section',
 			);
 
 			// Allow filtering of widgets
@@ -169,6 +171,14 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				array(),
 				MERIDIAN_VERSION
 			);
+
+		// Enqueue platform section styles
+		wp_enqueue_style(
+			'meridian-platform-section',
+			MERIDIAN_CSS . '/platform-section.css',
+			array(),
+			MERIDIAN_VERSION
+		);
 		}
 
 		/**
@@ -181,6 +191,15 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 			wp_register_script(
 				'meridian-hero-section',
 				MERIDIAN_JS . '/hero-section.js',
+				array( 'jquery' ),
+				MERIDIAN_VERSION,
+				true
+			);
+
+			// Register platform section script
+			wp_register_script(
+				'meridian-platform-section',
+				MERIDIAN_JS . '/platform-section.js',
 				array( 'jquery' ),
 				MERIDIAN_VERSION,
 				true
