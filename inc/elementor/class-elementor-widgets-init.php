@@ -88,6 +88,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'hero-section',
 				'breadcrumb-section',
 				'solutions-hero-section',
+				'subsidy-verification-section',
 			);
 
 			// Allow filtering of widgets
@@ -147,6 +148,14 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 			wp_enqueue_style(
 				'meridian-solutions-hero-section',
 				MERIDIAN_CSS . '/solutions-hero-section.css',
+				array(),
+				MERIDIAN_VERSION
+			);
+
+			// Enqueue subsidy verification section styles
+			wp_enqueue_style(
+				'meridian-subsidy-verification-section',
+				MERIDIAN_CSS . '/subsidy-verification-section.css',
 				array(),
 				MERIDIAN_VERSION
 			);

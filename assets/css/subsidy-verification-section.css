@@ -1,0 +1,293 @@
+/* ===========================
+   SUBSIDY VERIFICATION SECTION
+   =========================== */
+
+.subsidy-verification-section {
+    padding: 100px 0;
+    background-color: #0E172A;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.subsidy-verification-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.subsidy-verification-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.subsidy-verification-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.subsidy-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeInDown 0.6s ease;
+}
+
+.subsidy-icon i {
+    font-size: 24px;
+    color: white;
+}
+
+.subsidy-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+.subsidy-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    border: none;
+    letter-spacing: 1px;
+    animation: fadeInDown 0.8s ease;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.subsidy-badge span {
+    display: block;
+}
+
+.subsidy-verification-content h2 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    color: white;
+    animation: fadeInUp 0.8s ease 0.1s both;
+}
+
+.subsidy-intro {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    opacity: 0.95;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.subsidy-features-list {
+    list-style: none;
+    margin-bottom: 50px;
+    animation: fadeInUp 0.8s ease 0.3s both;
+    padding: 0;
+}
+
+.subsidy-features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 0;
+    font-size: 15px;
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.subsidy-features-list li:last-child {
+    border-bottom: none;
+}
+
+.subsidy-features-list i {
+    color: #fbbf24;
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.subsidy-features-list strong {
+    font-weight: 700;
+    color: white;
+}
+
+.subsidy-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.subsidy-stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px 20px;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.subsidy-stat-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.subsidy-stat-number {
+    font-size: 48px;
+    font-weight: 800;
+    color: #fbbf24;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.subsidy-stat-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.subsidy-cta-button {
+    text-align: center;
+    animation: fadeInUp 0.8s ease 0.5s both;
+}
+
+.subsidy-cta-button .btn-primary {
+    background: white;
+    color: var(--primary-color);
+    padding: 16px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.subsidy-cta-button .btn-primary:hover {
+    background: #fbbf24;
+    color: var(--dark-text);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================
+   RESPONSIVE STYLES
+   =========================== */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .subsidy-stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .subsidy-verification-content h2 {
+        font-size: 40px;
+    }
+}
+
+/* Mobile Landscape (481px - 767px) */
+@media (max-width: 767px) {
+    .subsidy-verification-section {
+        padding: 60px 0;
+    }
+
+    .subsidy-verification-content h2 {
+        font-size: 32px;
+    }
+
+    .subsidy-intro {
+        font-size: 16px;
+    }
+
+    .subsidy-features-list li {
+        font-size: 14px;
+    }
+
+    .subsidy-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .subsidy-stat-number {
+        font-size: 40px;
+    }
+}
+
+/* Mobile Portrait (320px - 480px) */
+@media (max-width: 480px) {
+    .subsidy-verification-section {
+        padding: 40px 0;
+    }
+
+    .subsidy-verification-content h2 {
+        font-size: 24px;
+    }
+
+    .subsidy-intro {
+        font-size: 14px;
+    }
+
+    .subsidy-features-list li {
+        font-size: 13px;
+        padding: 12px 0;
+    }
+
+    .subsidy-stat-number {
+        font-size: 32px;
+    }
+
+    .subsidy-stat-label {
+        font-size: 12px;
+    }
+
+    .subsidy-cta-button .btn-primary {
+        padding: 14px 32px;
+        font-size: 14px;
+    }
+}
+
