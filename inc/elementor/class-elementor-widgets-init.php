@@ -97,6 +97,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'policy-alignment-section',
 				'development-programs',
 				'data-governance-section',
+				'industries-section',
 			);
 
 			// Allow filtering of widgets
