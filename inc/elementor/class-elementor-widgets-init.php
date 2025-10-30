@@ -91,6 +91,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'subsidy-verification-section',
 				'stakeholder-solutions-section',
 				'comparison-table-section',
+				'cta-section',
 			);
 
 			// Allow filtering of widgets
@@ -174,6 +175,14 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 			wp_enqueue_style(
 				'meridian-comparison-table-section',
 				MERIDIAN_CSS . '/comparison-table-section.css',
+				array(),
+				MERIDIAN_VERSION
+			);
+
+			// Enqueue CTA section styles
+			wp_enqueue_style(
+				'meridian-cta-section',
+				MERIDIAN_CSS . '/cta-section.css',
 				array(),
 				MERIDIAN_VERSION
 			);
