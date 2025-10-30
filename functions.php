@@ -56,10 +56,13 @@ function meridian_africa_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses wp_nav_menu() in multiple locations.
 	register_nav_menus(
 		array(
-			'primary' => esc_html__( 'Primary Menu', 'meridian-africa' ),
+			'primary'            => esc_html__( 'Primary Menu', 'meridian-africa' ),
+			'footer-quick-links' => esc_html__( 'Footer Quick Links', 'meridian-africa' ),
+			'footer-legal'       => esc_html__( 'Footer Legal Links', 'meridian-africa' ),
+			'footer-bottom'      => esc_html__( 'Footer Bottom Links', 'meridian-africa' ),
 		)
 	);
 
@@ -130,6 +133,7 @@ add_action( 'after_setup_theme', 'meridian_africa_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function meridian_africa_widgets_init() {
+	// Main Sidebar
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Sidebar', 'meridian-africa' ),
@@ -139,6 +143,58 @@ function meridian_africa_widgets_init() {
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
+		)
+	);
+
+	// Footer Widget Area 1 - Logo & Social
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Column 1', 'meridian-africa' ),
+			'id'            => 'footer-1',
+			'description'   => esc_html__( 'Footer column for logo and social links.', 'meridian-africa' ),
+			'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="footer-widget-title">',
+			'after_title'   => '</h4>',
+		)
+	);
+
+	// Footer Widget Area 2 - Quick Links
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Column 2', 'meridian-africa' ),
+			'id'            => 'footer-2',
+			'description'   => esc_html__( 'Footer column for quick links.', 'meridian-africa' ),
+			'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="footer-widget-title">',
+			'after_title'   => '</h4>',
+		)
+	);
+
+	// Footer Widget Area 3 - Legal Links
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Column 3', 'meridian-africa' ),
+			'id'            => 'footer-3',
+			'description'   => esc_html__( 'Footer column for legal links.', 'meridian-africa' ),
+			'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="footer-widget-title">',
+			'after_title'   => '</h4>',
+		)
+	);
+
+	// Footer Widget Area 4 - Contact Info
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Column 4', 'meridian-africa' ),
+			'id'            => 'footer-4',
+			'description'   => esc_html__( 'Footer column for contact information.', 'meridian-africa' ),
+			'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="footer-widget-title">',
+			'after_title'   => '</h4>',
 		)
 	);
 }
@@ -191,6 +247,11 @@ require get_template_directory() . '/inc/customizer.php';
  * Custom Navigation Walker for Agrovue Header
  */
 require get_template_directory() . '/inc/class-nav-walker.php';
+
+/**
+ * Elementor Support and Theme Location Integration
+ */
+require get_template_directory() . '/inc/elementor-support.php';
 
 /**
  * Add Customizer settings for header button
@@ -246,3 +307,164 @@ add_action( 'customize_register', 'meridian_africa_header_customizer' );
 function meridian_africa_sanitize_checkbox( $checked ) {
 	return ( ( isset( $checked ) && true === $checked ) ? true : false );
 }
+
+/**
+ * Add Footer Customizer Settings
+ */
+function meridian_africa_footer_customizer( $wp_customize ) {
+	// Add Footer Settings Section
+	$wp_customize->add_section( 'meridian_footer_settings', array(
+		'title'    => __( 'Footer Settings', 'meridian-africa' ),
+		'priority' => 40,
+	) );
+
+	// Footer Logo
+	$wp_customize->add_setting( 'footer_logo', array(
+		'default'           => '',
+		'sanitize_callback' => 'absint',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'footer_logo', array(
+		'label'     => __( 'Footer Logo', 'meridian-africa' ),
+		'section'   => 'meridian_footer_settings',
+		'mime_type' => 'image',
+	) ) );
+
+	// Footer Tagline
+	$wp_customize->add_setting( 'footer_tagline', array(
+		'default'           => 'Satellite-powered agricultural intelligence for Africa',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( 'footer_tagline', array(
+		'label'   => __( 'Footer Tagline', 'meridian-africa' ),
+		'section' => 'meridian_footer_settings',
+		'type'    => 'text',
+	) );
+
+	// Social Media Links
+	$wp_customize->add_setting( 'footer_twitter', array(
+		'default'           => '#',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+
+	$wp_customize->add_control( 'footer_twitter', array(
+		'label'   => __( 'Twitter URL', 'meridian-africa' ),
+		'section' => 'meridian_footer_settings',
+		'type'    => 'url',
+	) );
+
+	$wp_customize->add_setting( 'footer_facebook', array(
+		'default'           => '#',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+
+	$wp_customize->add_control( 'footer_facebook', array(
+		'label'   => __( 'Facebook URL', 'meridian-africa' ),
+		'section' => 'meridian_footer_settings',
+		'type'    => 'url',
+	) );
+
+	$wp_customize->add_setting( 'footer_linkedin', array(
+		'default'           => 'https://www.linkedin.com/company/meridian-af',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+
+	$wp_customize->add_control( 'footer_linkedin', array(
+		'label'   => __( 'LinkedIn URL', 'meridian-africa' ),
+		'section' => 'meridian_footer_settings',
+		'type'    => 'url',
+	) );
+
+	$wp_customize->add_setting( 'footer_instagram', array(
+		'default'           => '#',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+
+	$wp_customize->add_control( 'footer_instagram', array(
+		'label'   => __( 'Instagram URL', 'meridian-africa' ),
+		'section' => 'meridian_footer_settings',
+		'type'    => 'url',
+	) );
+
+	// Contact Information
+	$wp_customize->add_setting( 'footer_email', array(
+		'default'           => 'hello@meridianafrica.io',
+		'sanitize_callback' => 'sanitize_email',
+	) );
+
+	$wp_customize->add_control( 'footer_email', array(
+		'label'   => __( 'Footer Email', 'meridian-africa' ),
+		'section' => 'meridian_footer_settings',
+		'type'    => 'email',
+	) );
+
+	$wp_customize->add_setting( 'footer_phone', array(
+		'default'           => '+447438993162',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( 'footer_phone', array(
+		'label'   => __( 'Footer Phone', 'meridian-africa' ),
+		'section' => 'meridian_footer_settings',
+		'type'    => 'text',
+	) );
+
+	$wp_customize->add_setting( 'footer_address', array(
+		'default'           => '17 Cavendish Street, Sheffield. S37SS. United Kingdom',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( 'footer_address', array(
+		'label'   => __( 'Footer Address', 'meridian-africa' ),
+		'section' => 'meridian_footer_settings',
+		'type'    => 'text',
+	) );
+
+	// Section Titles
+	$wp_customize->add_setting( 'footer_quicklinks_title', array(
+		'default'           => 'Quick Links',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( 'footer_quicklinks_title', array(
+		'label'   => __( 'Quick Links Section Title', 'meridian-africa' ),
+		'section' => 'meridian_footer_settings',
+		'type'    => 'text',
+	) );
+
+	$wp_customize->add_setting( 'footer_legal_title', array(
+		'default'           => 'Legal',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( 'footer_legal_title', array(
+		'label'   => __( 'Legal Section Title', 'meridian-africa' ),
+		'section' => 'meridian_footer_settings',
+		'type'    => 'text',
+	) );
+
+	$wp_customize->add_setting( 'footer_contact_title', array(
+		'default'           => 'Get in Touch',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( 'footer_contact_title', array(
+		'label'   => __( 'Contact Section Title', 'meridian-africa' ),
+		'section' => 'meridian_footer_settings',
+		'type'    => 'text',
+	) );
+
+	// Copyright Text
+	$wp_customize->add_setting( 'footer_copyright', array(
+		'default'           => '&copy; ' . date( 'Y' ) . ' Meridian Africa. All rights reserved.',
+		'sanitize_callback' => 'wp_kses_post',
+	) );
+
+	$wp_customize->add_control( 'footer_copyright', array(
+		'label'   => __( 'Copyright Text', 'meridian-africa' ),
+		'section' => 'meridian_footer_settings',
+		'type'    => 'textarea',
+	) );
+}
+add_action( 'customize_register', 'meridian_africa_footer_customizer' );
