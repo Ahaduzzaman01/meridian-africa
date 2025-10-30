@@ -254,6 +254,13 @@ require get_template_directory() . '/inc/class-nav-walker.php';
 require get_template_directory() . '/inc/elementor-support.php';
 
 /**
+ * Elementor Widgets Initialization
+ */
+if ( did_action( 'elementor/loaded' ) ) {
+	require get_template_directory() . '/inc/elementor/class-elementor-widgets-init.php';
+}
+
+/**
  * Add Customizer settings for header button
  */
 function meridian_africa_header_customizer( $wp_customize ) {
