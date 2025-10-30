@@ -11,17 +11,31 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
-// Get theme options (if you add customizer options later)
-$meridian_logo = get_theme_mod( 'custom_logo' );
-$meridian_logo_url = '';
-$meridian_logo_alt = '';
+// Get header logo settings
+$header_logo = get_theme_mod( 'header_logo' );
+$header_logo_url = '';
+$header_logo_alt = '';
 
-if ( $meridian_logo ) {
-    $meridian_logo_url = wp_get_attachment_image_url( $meridian_logo, 'full' );
-    $meridian_logo_alt = get_post_meta( $meridian_logo, '_wp_attachment_image_alt', true );
+if ( $header_logo ) {
+    $header_logo_url = wp_get_attachment_image_url( $header_logo, 'full' );
+    $header_logo_alt = get_post_meta( $header_logo, '_wp_attachment_image_alt', true );
+} else {
+    // Fallback to WordPress custom logo if header logo is not set
+    $meridian_logo = get_theme_mod( 'custom_logo' );
+    if ( $meridian_logo ) {
+        $header_logo_url = wp_get_attachment_image_url( $meridian_logo, 'full' );
+        $header_logo_alt = get_post_meta( $meridian_logo, '_wp_attachment_image_alt', true );
+    }
 }
 
-// Header button settings (can be customized via Customizer later)
+// Get header title settings
+$header_title_enable = get_theme_mod( 'header_title_enable', true );
+$header_title_text = get_theme_mod( 'header_title_text', '' );
+
+// Use custom title text if set, otherwise use site name
+$header_title = ! empty( $header_title_text ) ? $header_title_text : get_bloginfo( 'name' );
+
+// Header button settings
 $header_btn_enable = get_theme_mod( 'header_btn_enable', true );
 $header_btn_text = get_theme_mod( 'header_btn_text', 'Login' );
 $header_btn_link = get_theme_mod( 'header_btn_link', 'https://agrovue.io/register' );
@@ -34,12 +48,14 @@ $header_btn_link = get_theme_mod( 'header_btn_link', 'https://agrovue.io/registe
         <div class="navbar-content">
             <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                 <div class="logo">
-                    <?php if ( $meridian_logo_url ) : ?>
-                        <img src="<?php echo esc_url( $meridian_logo_url ); ?>" alt="<?php echo esc_attr( $meridian_logo_alt ); ?>" class="logo-image">
+                    <?php if ( $header_logo_url ) : ?>
+                        <img src="<?php echo esc_url( $header_logo_url ); ?>" alt="<?php echo esc_attr( $header_logo_alt ); ?>" class="logo-image">
                     <?php else : ?>
                         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Meridian_Sentinel_Favicon.png' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="logo-image">
                     <?php endif; ?>
-                    <span><?php bloginfo( 'name' ); ?></span>
+                    <?php if ( $header_title_enable ) : ?>
+                        <span><?php echo esc_html( $header_title ); ?></span>
+                    <?php endif; ?>
                 </div>
             </a>
 

@@ -263,6 +263,45 @@ function meridian_africa_header_customizer( $wp_customize ) {
 		'priority' => 30,
 	) );
 
+	// Header Logo
+	$wp_customize->add_setting( 'header_logo', array(
+		'default'           => '',
+		'sanitize_callback' => 'absint',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'header_logo', array(
+		'label'       => __( 'Custom Header Logo', 'meridian-africa' ),
+		'description' => __( 'Upload a custom logo for the header. If not set, the default logo will be used.', 'meridian-africa' ),
+		'section'     => 'meridian_header_settings',
+		'mime_type'   => 'image',
+	) ) );
+
+	// Header Title Enable/Disable
+	$wp_customize->add_setting( 'header_title_enable', array(
+		'default'           => true,
+		'sanitize_callback' => 'meridian_africa_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'header_title_enable', array(
+		'label'       => __( 'Enable Header Title', 'meridian-africa' ),
+		'description' => __( 'Show or hide the header title text next to the logo.', 'meridian-africa' ),
+		'section'     => 'meridian_header_settings',
+		'type'        => 'checkbox',
+	) );
+
+	// Custom Header Title Text
+	$wp_customize->add_setting( 'header_title_text', array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( 'header_title_text', array(
+		'label'       => __( 'Custom Header Title Text', 'meridian-africa' ),
+		'description' => __( 'Enter custom text for the header title. Leave empty to use the site name.', 'meridian-africa' ),
+		'section'     => 'meridian_header_settings',
+		'type'        => 'text',
+	) );
+
 	// Header Button Enable/Disable
 	$wp_customize->add_setting( 'header_btn_enable', array(
 		'default'           => true,
