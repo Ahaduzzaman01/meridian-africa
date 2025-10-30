@@ -95,6 +95,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'platform-section',
 				'operational-timeline',
 				'policy-alignment-section',
+				'development-programs',
 			);
 
 			// Allow filtering of widgets
@@ -194,6 +195,14 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 		wp_enqueue_style(
 			'meridian-policy-alignment-section',
 			MERIDIAN_CSS . '/policy-alignment-section.css',
+			array(),
+			MERIDIAN_VERSION
+		);
+
+		// Enqueue development programs styles
+		wp_enqueue_style(
+			'meridian-development-programs',
+			MERIDIAN_CSS . '/development-programs.css',
 			array(),
 			MERIDIAN_VERSION
 		);
