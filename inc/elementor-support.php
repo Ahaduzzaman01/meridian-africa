@@ -167,11 +167,92 @@ function meridian_africa_elementor_compatibility() {
 
 	// Ensure Elementor respects theme's container width
 	update_option( 'elementor_container_width', '1200' );
-	
+
+	// Disable Elementor's Font Awesome loading to prevent conflicts
+	update_option( 'elementor_load_fa4_shim', 'no' );
+
 	// Set default color scheme to match theme
 	// This can be customized based on your theme's color palette
 }
 add_action( 'after_switch_theme', 'meridian_africa_elementor_compatibility' );
+
+/**
+ * Remove Elementor's Font Awesome from being loaded
+ *
+ * @param string $tag    The link tag for the enqueued style.
+ * @param string $handle The style's registered handle.
+ * @return string Modified or original tag.
+ */
+function meridian_africa_remove_elementor_fontawesome( $tag, $handle ) {
+	// Remove Elementor's Font Awesome if it's being loaded
+	if ( strpos( $handle, 'elementor-icons-fa' ) !== false ) {
+		return '';
+	}
+	return $tag;
+}
+add_filter( 'style_loader_tag', 'meridian_africa_remove_elementor_fontawesome', 10, 2 );
+
+/**
+ * Disable Elementor Font Awesome enqueue
+ * Force Elementor to use theme's Font Awesome
+ *
+ * @since 1.0.0
+ */
+function meridian_africa_elementor_disable_fa() {
+	// Remove Elementor's Font Awesome
+	wp_dequeue_style( 'elementor-icons-fa-solid' );
+	wp_dequeue_style( 'elementor-icons-fa-regular' );
+	wp_dequeue_style( 'elementor-icons-fa-brands' );
+	wp_deregister_style( 'elementor-icons-fa-solid' );
+	wp_deregister_style( 'elementor-icons-fa-regular' );
+	wp_deregister_style( 'elementor-icons-fa-brands' );
+}
+add_action( 'elementor/frontend/after_register_styles', 'meridian_africa_elementor_disable_fa', 20 );
+add_action( 'elementor/editor/after_register_styles', 'meridian_africa_elementor_disable_fa', 20 );
+
+/**
+ * Disable Elementor's Font Awesome 4 compatibility
+ * This ensures Font Awesome 6 icons work properly
+ *
+ * @since 1.0.0
+ * @return string
+ */
+function meridian_africa_disable_fa4_compatibility() {
+	return 'no';
+}
+add_filter( 'elementor/frontend/print_google_fonts', '__return_true' );
+
+/**
+ * Ensure Font Awesome is available in Elementor editor
+ *
+ * @since 1.0.0
+ */
+function meridian_africa_elementor_editor_enqueue() {
+	wp_enqueue_style(
+		'font-awesome-editor',
+		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+		array(),
+		'6.4.0'
+	);
+}
+add_action( 'elementor/editor/before_enqueue_scripts', 'meridian_africa_elementor_editor_enqueue' );
+
+/**
+ * Ensure Font Awesome is available on frontend for Elementor widgets
+ *
+ * @since 1.0.0
+ */
+function meridian_africa_elementor_frontend_enqueue() {
+	if ( ! wp_style_is( 'font-awesome', 'enqueued' ) ) {
+		wp_enqueue_style(
+			'font-awesome',
+			'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+			array(),
+			'6.4.0'
+		);
+	}
+}
+add_action( 'elementor/frontend/before_enqueue_scripts', 'meridian_africa_elementor_frontend_enqueue' );
 
 /**
  * Filter to add body classes when Elementor templates are active

@@ -204,11 +204,12 @@ add_action( 'widgets_init', 'meridian_africa_widgets_init' );
  * Enqueue scripts and styles.
  */
 function meridian_africa_scripts() {
-	// Font Awesome
+	// Font Awesome 6.4.0 - Load early to prevent Elementor conflicts
+	// Using high priority to ensure it loads before Elementor's Font Awesome
 	wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0' );
 
 	// Main theme stylesheet (now includes all agrovue-header styles and Google Fonts import)
-	wp_enqueue_style( 'meridian-africa-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'meridian-africa-style', get_stylesheet_uri(), array( 'font-awesome' ), _S_VERSION );
 	wp_style_add_data( 'meridian-africa-style', 'rtl', 'replace' );
 
 	// Agrovue Header JavaScript
@@ -221,7 +222,19 @@ function meridian_africa_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'meridian_africa_scripts' );
+add_action( 'wp_enqueue_scripts', 'meridian_africa_scripts', 5 );
+
+/**
+ * Disable Elementor's default Font Awesome icons
+ * This prevents conflicts with the theme's Font Awesome 6.4.0
+ *
+ * @since 1.0.0
+ */
+function meridian_africa_disable_elementor_icons() {
+	// Tell Elementor to not load Font Awesome
+	update_option( 'elementor_load_fa4_shim', 'no' );
+}
+add_action( 'init', 'meridian_africa_disable_elementor_icons' );
 
 /**
  * Implement the Custom Header feature.
