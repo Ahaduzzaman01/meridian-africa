@@ -242,6 +242,84 @@ class Meridian_Africa_Development_Programs_Widget extends Widget_Base {
 	}
 
 	/**
+	 * Sanitize SVG output.
+	 *
+	 * @since 1.0.0
+	 * @param string $svg SVG code to sanitize.
+	 * @return string Sanitized SVG code.
+	 */
+	private function sanitize_svg( $svg ) {
+		// Define allowed SVG tags and attributes
+		$allowed_tags = array(
+			'svg'    => array(
+				'xmlns'       => true,
+				'viewbox'     => true,
+				'width'       => true,
+				'height'      => true,
+				'class'       => true,
+				'fill'        => true,
+				'stroke'      => true,
+				'stroke-width' => true,
+			),
+			'path'   => array(
+				'd'            => true,
+				'fill'         => true,
+				'stroke'       => true,
+				'stroke-width' => true,
+				'stroke-linecap' => true,
+				'stroke-linejoin' => true,
+			),
+			'circle' => array(
+				'cx'           => true,
+				'cy'           => true,
+				'r'            => true,
+				'fill'         => true,
+				'stroke'       => true,
+				'stroke-width' => true,
+			),
+			'rect'   => array(
+				'x'            => true,
+				'y'            => true,
+				'width'        => true,
+				'height'       => true,
+				'fill'         => true,
+				'stroke'       => true,
+				'stroke-width' => true,
+				'rx'           => true,
+				'ry'           => true,
+			),
+			'g'      => array(
+				'fill'         => true,
+				'stroke'       => true,
+				'stroke-width' => true,
+				'transform'    => true,
+			),
+			'polygon' => array(
+				'points'       => true,
+				'fill'         => true,
+				'stroke'       => true,
+				'stroke-width' => true,
+			),
+			'polyline' => array(
+				'points'       => true,
+				'fill'         => true,
+				'stroke'       => true,
+				'stroke-width' => true,
+			),
+			'line'   => array(
+				'x1'           => true,
+				'y1'           => true,
+				'x2'           => true,
+				'y2'           => true,
+				'stroke'       => true,
+				'stroke-width' => true,
+			),
+		);
+
+		return wp_kses( $svg, $allowed_tags );
+	}
+
+	/**
 	 * Get default programs data.
 	 *
 	 * @since 1.0.0
@@ -295,7 +373,7 @@ class Meridian_Africa_Development_Programs_Widget extends Widget_Base {
 						<div class="program-card">
 							<div class="program-header">
 								<div class="country-flag">
-									<?php echo wp_kses_post( $item['flag_svg'] ); ?>
+									<?php echo $this->sanitize_svg( $item['flag_svg'] ); ?>
 								</div>
 								<h3><?php echo esc_html( $item['program_title'] ); ?></h3>
 							</div>
