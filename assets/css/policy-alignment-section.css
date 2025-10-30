@@ -1,0 +1,473 @@
+/* ===========================
+   POLICY ALIGNMENT SHOWCASE SECTION
+   =========================== */
+
+.policy-alignment-showcase {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #fafbfc 0%, #f0f9ff 50%, #fafbfc 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.policy-alignment-showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 15% 20%, rgba(46, 143, 51, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(14, 165, 233, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.policy-alignment-showcase .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Header Section */
+.policy-showcase-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 70px;
+    animation: fadeInUp 0.8s ease;
+}
+
+.policy-badge-premium {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, rgba(46, 143, 51, 0.12) 0%, rgba(14, 165, 233, 0.12) 100%);
+    padding: 14px 32px;
+    border-radius: 50px;
+    border: 2px solid rgba(46, 143, 51, 0.25);
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(46, 143, 51, 0.1);
+}
+
+.policy-badge-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 3s infinite;
+}
+
+.policy-badge-premium i {
+    font-size: 18px;
+    color: #2e8f33;
+    position: relative;
+    z-index: 1;
+}
+
+.policy-badge-premium span {
+    font-size: 12px;
+    font-weight: 800;
+    color: #2e8f33;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+.policy-main-title {
+    font-size: 52px;
+    font-weight: 900;
+    color: #0a2e0d;
+    margin-bottom: 24px;
+    line-height: 1.15;
+    background: linear-gradient(135deg, #0a2e0d 0%, #2e8f33 50%, #0ea5e9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -1px;
+}
+
+.policy-subtitle {
+    font-size: 18px;
+    color: #475569;
+    line-height: 1.8;
+    max-width: 850px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* Frameworks Grid */
+.policy-frameworks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+}
+
+/* Framework Item Card */
+.policy-framework-item {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 2px solid transparent;
+    animation: fadeInUp 0.8s ease backwards;
+}
+
+.policy-framework-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.policy-framework-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.policy-framework-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.policy-framework-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Accent Bar */
+.framework-accent-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--accent-color-1), var(--accent-color-2));
+    transition: height 0.4s ease;
+}
+
+.policy-framework-item:hover .framework-accent-bar {
+    height: 8px;
+}
+
+/* Color Variants */
+.framework-purple {
+    --accent-color-1: #8b5cf6;
+    --accent-color-2: #a78bfa;
+    --icon-bg: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(167, 139, 250, 0.1));
+    --hover-shadow: rgba(139, 92, 246, 0.25);
+}
+
+.framework-teal {
+    --accent-color-1: #14b8a6;
+    --accent-color-2: #5eead4;
+    --icon-bg: linear-gradient(135deg, rgba(20, 184, 166, 0.15), rgba(94, 234, 212, 0.1));
+    --hover-shadow: rgba(20, 184, 166, 0.25);
+}
+
+.framework-amber {
+    --accent-color-1: #f59e0b;
+    --accent-color-2: #fbbf24;
+    --icon-bg: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(251, 191, 36, 0.1));
+    --hover-shadow: rgba(245, 158, 11, 0.25);
+}
+
+.framework-emerald {
+    --accent-color-1: #10b981;
+    --accent-color-2: #34d399;
+    --icon-bg: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(52, 211, 153, 0.1));
+    --hover-shadow: rgba(16, 185, 129, 0.25);
+}
+
+/* Header Section */
+.framework-header-section {
+    padding: 36px 36px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.framework-icon-premium {
+    width: 70px;
+    height: 70px;
+    background: var(--icon-bg);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.framework-icon-premium i {
+    font-size: 32px;
+    background: linear-gradient(135deg, var(--accent-color-1), var(--accent-color-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.framework-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.policy-framework-item:hover .framework-icon-premium {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.framework-title-premium {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.3;
+    margin: 0;
+    flex: 1;
+}
+
+/* Description Box */
+.framework-description-box {
+    padding: 0 36px 28px;
+}
+
+.framework-description-box p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #475569;
+    margin: 0;
+}
+
+.framework-description-box strong {
+    color: #1e293b;
+    font-weight: 700;
+}
+
+/* Footer Tag */
+.framework-footer-tag {
+    padding: 20px 36px;
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.8) 100%);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tag-label {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 18px;
+    background: linear-gradient(135deg, var(--accent-color-1), var(--accent-color-2));
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px var(--hover-shadow);
+    transition: all 0.3s ease;
+}
+
+.policy-framework-item:hover .tag-label {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px var(--hover-shadow);
+}
+
+/* Hover Effects */
+.policy-framework-item:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 60px var(--hover-shadow);
+    border-color: var(--accent-color-1);
+}
+
+/* Responsive Design for Policy Alignment */
+@media (max-width: 1024px) {
+    .policy-alignment-showcase {
+        padding: 80px 0;
+    }
+
+    .policy-main-title {
+        font-size: 42px;
+    }
+
+    .policy-subtitle {
+        font-size: 17px;
+    }
+
+    .policy-frameworks-grid {
+        gap: 32px;
+    }
+
+    .framework-header-section {
+        padding: 32px 32px 20px;
+    }
+
+    .framework-description-box {
+        padding: 0 32px 24px;
+    }
+
+    .framework-footer-tag {
+        padding: 18px 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .policy-alignment-showcase {
+        padding: 60px 0;
+    }
+
+    .policy-showcase-header {
+        margin-bottom: 50px;
+    }
+
+    .policy-badge-premium {
+        padding: 12px 24px;
+    }
+
+    .policy-badge-premium i {
+        font-size: 16px;
+    }
+
+    .policy-badge-premium span {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .policy-main-title {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .policy-subtitle {
+        font-size: 16px;
+    }
+
+    .policy-frameworks-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .framework-header-section {
+        padding: 28px 28px 18px;
+        gap: 16px;
+    }
+
+    .framework-icon-premium {
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+    }
+
+    .framework-icon-premium i {
+        font-size: 28px;
+    }
+
+    .framework-title-premium {
+        font-size: 21px;
+    }
+
+    .framework-description-box {
+        padding: 0 28px 22px;
+    }
+
+    .framework-description-box p {
+        font-size: 14px;
+    }
+
+    .framework-footer-tag {
+        padding: 16px 28px;
+    }
+
+    .tag-label {
+        font-size: 10px;
+        padding: 7px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .policy-alignment-showcase {
+        padding: 50px 0;
+    }
+
+    .policy-showcase-header {
+        margin-bottom: 40px;
+    }
+
+    .policy-badge-premium {
+        padding: 10px 20px;
+        gap: 10px;
+    }
+
+    .policy-badge-premium i {
+        font-size: 14px;
+    }
+
+    .policy-badge-premium span {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .policy-main-title {
+        font-size: 28px;
+        margin-bottom: 16px;
+        letter-spacing: -0.5px;
+    }
+
+    .policy-subtitle {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .policy-frameworks-grid {
+        gap: 24px;
+    }
+
+    .framework-header-section {
+        padding: 24px 24px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .framework-icon-premium {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+    }
+
+    .framework-icon-premium i {
+        font-size: 26px;
+    }
+
+    .framework-title-premium {
+        font-size: 19px;
+    }
+
+    .framework-description-box {
+        padding: 0 24px 20px;
+    }
+
+    .framework-description-box p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .framework-footer-tag {
+        padding: 14px 24px;
+    }
+
+    .tag-label {
+        font-size: 9px;
+        padding: 6px 14px;
+        letter-spacing: 1px;
+    }
+
+    .policy-framework-item:hover {
+        transform: translateY(-8px) scale(1.01);
+    }
+}
+

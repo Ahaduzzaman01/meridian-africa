@@ -94,6 +94,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'system-architecture-solution',
 				'platform-section',
 				'operational-timeline',
+				'policy-alignment-section',
 			);
 
 			// Allow filtering of widgets
@@ -185,6 +186,14 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 		wp_enqueue_style(
 			'meridian-operational-timeline',
 			MERIDIAN_CSS . '/operational-timeline.css',
+			array(),
+			MERIDIAN_VERSION
+		);
+
+		// Enqueue policy alignment section styles
+		wp_enqueue_style(
+			'meridian-policy-alignment-section',
+			MERIDIAN_CSS . '/policy-alignment-section.css',
 			array(),
 			MERIDIAN_VERSION
 		);
