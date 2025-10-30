@@ -90,6 +90,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'solutions-hero-section',
 				'frameworks-marquee',
 				'verification-crisis',
+				'why-now',
 			);
 
 			// Allow filtering of widgets
