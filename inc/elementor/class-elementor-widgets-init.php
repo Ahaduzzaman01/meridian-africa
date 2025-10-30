@@ -89,6 +89,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'breadcrumb-section',
 				'solutions-hero-section',
 				'frameworks-marquee',
+				'verification-crisis',
 			);
 
 			// Allow filtering of widgets
@@ -156,6 +157,14 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 			wp_enqueue_style(
 				'meridian-frameworks-marquee',
 				MERIDIAN_CSS . '/frameworks-marquee.css',
+			array(),
+			MERIDIAN_VERSION
+		);
+
+		// Enqueue verification crisis section styles
+		wp_enqueue_style(
+			'meridian-verification-crisis',
+			MERIDIAN_CSS . '/verification-crisis.css',
 				array(),
 				MERIDIAN_VERSION
 			);
