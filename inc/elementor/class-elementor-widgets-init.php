@@ -95,6 +95,8 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'institutional-breadcrumb-hero',
 				'tech-specs-section',
 				'integration-section',
+				'contact-breadcrumb',
+				'contact-hero-section',
 			);
 
 			// Allow filtering of widgets
@@ -210,6 +212,22 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 			wp_enqueue_style(
 				'meridian-integration-section',
 				MERIDIAN_CSS . '/integration-section.css',
+				array(),
+				MERIDIAN_VERSION
+			);
+
+			// Enqueue contact breadcrumb styles
+			wp_enqueue_style(
+				'meridian-contact-breadcrumb',
+				MERIDIAN_CSS . '/contact-breadcrumb.css',
+				array(),
+				MERIDIAN_VERSION
+			);
+
+			// Enqueue contact hero section styles
+			wp_enqueue_style(
+				'meridian-contact-hero-section',
+				MERIDIAN_CSS . '/contact-hero-section.css',
 				array(),
 				MERIDIAN_VERSION
 			);
