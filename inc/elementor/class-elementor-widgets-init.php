@@ -98,6 +98,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'contact-breadcrumb',
 				'contact-hero-section',
 				'contact-info-cards',
+				'contact-form-section',
 			);
 
 			// Allow filtering of widgets
@@ -240,6 +241,14 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				array(),
 				MERIDIAN_VERSION
 			);
+
+			// Enqueue contact form section styles
+			wp_enqueue_style(
+				'meridian-contact-form-section',
+				MERIDIAN_CSS . '/contact-form-section.css',
+				array(),
+				MERIDIAN_VERSION
+			);
 		}
 
 		/**
@@ -252,6 +261,15 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 			wp_register_script(
 				'meridian-hero-section',
 				MERIDIAN_JS . '/hero-section.js',
+				array( 'jquery' ),
+				MERIDIAN_VERSION,
+				true
+			);
+
+			// Enqueue contact form section script
+			wp_enqueue_script(
+				'meridian-contact-form-section',
+				MERIDIAN_JS . '/contact-form-section.js',
 				array( 'jquery' ),
 				MERIDIAN_VERSION,
 				true
