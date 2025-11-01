@@ -99,6 +99,9 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'contact-hero-section',
 				'contact-info-cards',
 				'contact-form-section',
+				'legal-breadcrumb',
+				'legal-hero-section',
+				'quick-navigation-section',
 			);
 
 			// Allow filtering of widgets
