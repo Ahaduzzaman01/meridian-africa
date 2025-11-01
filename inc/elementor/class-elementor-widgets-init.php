@@ -97,6 +97,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'integration-section',
 				'contact-breadcrumb',
 				'contact-hero-section',
+				'contact-info-cards',
 			);
 
 			// Allow filtering of widgets
@@ -228,6 +229,14 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 			wp_enqueue_style(
 				'meridian-contact-hero-section',
 				MERIDIAN_CSS . '/contact-hero-section.css',
+				array(),
+				MERIDIAN_VERSION
+			);
+
+			// Enqueue contact info cards styles
+			wp_enqueue_style(
+				'meridian-contact-info-cards',
+				MERIDIAN_CSS . '/contact-info-cards.css',
 				array(),
 				MERIDIAN_VERSION
 			);
