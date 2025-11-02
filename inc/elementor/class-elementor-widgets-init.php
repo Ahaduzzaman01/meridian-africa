@@ -117,6 +117,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'legal-content-section',
 				'terms-content-section',
 				'security-legal-content',
+				'team-hero-section',
 			);
 
 			// Allow filtering of widgets
@@ -351,6 +352,14 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 			wp_enqueue_style(
 				'meridian-legal-content-section',
 				get_template_directory_uri() . '/agrovue-landing-html/css/legal.css',
+				array(),
+				MERIDIAN_VERSION
+			);
+
+			// Register founders section styles (for team hero section widget)
+			wp_register_style(
+				'meridian-founders',
+				MERIDIAN_CSS . '/founders.css',
 				array(),
 				MERIDIAN_VERSION
 			);
