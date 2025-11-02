@@ -343,6 +343,10 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 			wp_enqueue_style(
 				'meridian-system-architecture-solution',
 				MERIDIAN_CSS . '/system-architecture-solution.css',
+				array(),
+				MERIDIAN_VERSION
+			);
+
 			// Enqueue legal content section styles (legal.css from original HTML)
 			wp_enqueue_style(
 				'meridian-legal-content-section',
