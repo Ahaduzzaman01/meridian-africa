@@ -118,6 +118,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'terms-content-section',
 				'security-legal-content',
 				'team-hero-section',
+				'compliance-content-section',
 			);
 
 			// Allow filtering of widgets
@@ -348,11 +349,19 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				MERIDIAN_VERSION
 			);
 
+			// Enqueue main style.css first (contains CSS variables)
+			wp_enqueue_style(
+				'meridian-agrovue-main-styles',
+				get_template_directory_uri() . '/agrovue-landing-html/css/style.css',
+				array(),
+				MERIDIAN_VERSION
+			);
+
 			// Enqueue legal content section styles (legal.css from original HTML)
 			wp_enqueue_style(
 				'meridian-legal-content-section',
 				get_template_directory_uri() . '/agrovue-landing-html/css/legal.css',
-				array(),
+				array( 'meridian-agrovue-main-styles' ), // Depends on main styles for CSS variables
 				MERIDIAN_VERSION
 			);
 
