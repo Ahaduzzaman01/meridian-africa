@@ -108,6 +108,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'contact-info-cards',
 				'contact-form-section',
 				'legal-hero-section',
+				'compliance-hero-section',
 				'quick-navigation-section',
 				'legal-content-section',
 				'terms-content-section',
