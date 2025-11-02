@@ -113,6 +113,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'legal-hero-section',
 				'quick-navigation-section',
 				'agrovue-verify-section',
+				'scroll-triggered-image-section',
 			);
 
 			// Allow filtering of widgets
