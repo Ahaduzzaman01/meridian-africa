@@ -1,0 +1,60 @@
+/* ===========================
+   CONTACT BREADCRUMB STYLES
+   =========================== */
+
+.breadcrumb-section {
+    background: linear-gradient(135deg, #1E41AF 0%, #1E41AF 100%);
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.breadcrumb-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+.breadcrumb-link:hover {
+    color: white;
+    transform: translateX(2px);
+}
+
+.breadcrumb-separator {
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-current {
+    color: white;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .breadcrumb {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .breadcrumb-section {
+        padding: 15px 0;
+    }
+    
+    .breadcrumb {
+        font-size: 12px;
+        gap: 8px;
+    }
+}
+

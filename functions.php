@@ -212,6 +212,9 @@ function meridian_africa_scripts() {
 	wp_enqueue_style( 'meridian-africa-style', get_stylesheet_uri(), array( 'font-awesome' ), _S_VERSION );
 	wp_style_add_data( 'meridian-africa-style', 'rtl', 'replace' );
 
+	// Legal pages stylesheet
+	wp_enqueue_style( 'meridian-africa-legal', MERIDIAN_CSS . '/legal.css', array( 'meridian-africa-style' ), MERIDIAN_VERSION );
+
 	// Agrovue Header JavaScript
 	wp_enqueue_script( 'agrovue-header', MERIDIAN_JS . '/agrovue-header.js', array( 'jquery' ), MERIDIAN_VERSION, true );
 

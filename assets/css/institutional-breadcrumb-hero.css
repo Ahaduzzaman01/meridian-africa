@@ -1,0 +1,221 @@
+/**
+ * Institutional Breadcrumb & Hero Section Styles
+ * 
+ * @package Meridian_Africa
+ * @since 1.0.0
+ */
+
+/* ===========================
+   Breadcrumb Section
+   =========================== */
+
+.breadcrumb-section {
+    background: linear-gradient(135deg, #1E41AF 0%, #1E41AF 100%);
+    padding: 20px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.breadcrumb-section .container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.breadcrumb-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.breadcrumb-link:hover {
+    color: white !important;
+}
+
+.breadcrumb-separator {
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.breadcrumb-current {
+    color: white;
+    font-weight: 600;
+}
+
+/* ===========================
+   Breadcrumb & Hero Section
+   =========================== */
+
+.institutional-breadcrumb-hero {
+    background: linear-gradient(135deg, #1E41AF 0%, #1E41AF 100%);
+    padding: 100px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+}
+
+.hero-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    opacity: 0.2;
+}
+
+.hero-shape.shape-1 {
+    width: 400px;
+    height: 400px;
+    top: -150px;
+    right: -100px;
+    animation: float 8s ease-in-out infinite;
+}
+
+.hero-shape.shape-2 {
+    width: 250px;
+    height: 250px;
+    bottom: -80px;
+    left: -50px;
+    animation: float 10s ease-in-out infinite reverse;
+}
+
+.hero-shape.shape-3 {
+    width: 180px;
+    height: 180px;
+    top: 50%;
+    left: 10%;
+    animation: float 12s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg); 
+    }
+    50% { 
+        transform: translateY(-30px) rotate(10deg); 
+    }
+}
+
+.institutional-breadcrumb-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    animation: fadeInUp 0.8s ease;
+    color: white;
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.7;
+    opacity: 0.95;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+/* ===========================
+   Animations
+   =========================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .institutional-breadcrumb-hero {
+        padding: 100px 0 80px;
+    }
+
+    .hero-title {
+        font-size: 40px;
+    }
+
+    .hero-description {
+        font-size: 17px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .breadcrumb-section {
+        padding: 15px 0;
+    }
+
+    .breadcrumb-section .container {
+        font-size: 13px;
+    }
+
+    .institutional-breadcrumb-hero {
+        padding: 90px 0 60px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .breadcrumb-section {
+        padding: 12px 0;
+    }
+
+    .institutional-breadcrumb-hero {
+        padding: 80px 0 50px;
+    }
+
+    .hero-title {
+        font-size: 26px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+}
+
+/* Landscape Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .institutional-breadcrumb-hero {
+        padding: 70px 0 50px;
+    }
+}
+
