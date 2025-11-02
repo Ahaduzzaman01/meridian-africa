@@ -110,6 +110,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'legal-hero-section',
 				'quick-navigation-section',
 				'legal-content-section',
+				'terms-content-section',
 			);
 
 			// Allow filtering of widgets
