@@ -112,6 +112,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'legal-breadcrumb',
 				'legal-hero-section',
 				'quick-navigation-section',
+				'agrovue-verify-section',
 			);
 
 			// Allow filtering of widgets
@@ -314,6 +315,14 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 			wp_enqueue_style(
 				'meridian-contact-form-section',
 				MERIDIAN_CSS . '/contact-form-section.css',
+				array(),
+				MERIDIAN_VERSION
+			);
+
+			// Enqueue agrovue verify section styles
+			wp_enqueue_style(
+				'meridian-agrovue-verify-section',
+				MERIDIAN_CSS . '/agrovue-verify-section.css',
 				array(),
 				MERIDIAN_VERSION
 			);

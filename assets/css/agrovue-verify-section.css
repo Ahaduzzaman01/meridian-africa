@@ -1,0 +1,469 @@
+/* ===========================
+   AGROVUE VERIFY SECTION - NEW PREMIUM SECTION
+   =========================== */
+
+.agrovue-verify-section {
+    position: relative;
+    padding: 120px 0;
+    background: linear-gradient(180deg, #0a1628 0%, #0f1f3a 50%, #1a2942 100%);
+    overflow: hidden;
+}
+
+.verify-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.verify-gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    animation: floatOrb 25s ease-in-out infinite;
+}
+
+.verify-gradient-orb.orb-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(46, 143, 51, 0.25) 0%, transparent 70%);
+    top: -250px;
+    right: -150px;
+    animation-delay: 0s;
+}
+
+.verify-gradient-orb.orb-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(46, 143, 51, 0.2) 0%, transparent 70%);
+    bottom: -200px;
+    left: -150px;
+    animation-delay: 8s;
+}
+
+.verify-gradient-orb.orb-3 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(74, 222, 128, 0.15) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 16s;
+}
+
+@keyframes floatOrb {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(40px, -40px) scale(1.1);
+    }
+    50% {
+        transform: translate(-30px, 30px) scale(0.9);
+    }
+    75% {
+        transform: translate(30px, 40px) scale(1.05);
+    }
+}
+
+/* Verify Section Header */
+.verify-section-header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 80px;
+}
+
+.verify-flagship-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(46, 143, 51, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #2e8f33;
+    margin-bottom: 28px;
+    border: 1px solid rgba(46, 143, 51, 0.3);
+    animation: fadeInDown 0.8s ease;
+    transition: all 0.3s ease;
+}
+
+.verify-flagship-badge:hover {
+    background: rgba(46, 143, 51, 0.25);
+    border-color: rgba(46, 143, 51, 0.5);
+    transform: translateY(-2px);
+}
+
+.verify-flagship-badge i {
+    font-size: 16px;
+    color: #2e8f33;
+}
+
+.verify-section-title {
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    color: #ffffff;
+    animation: fadeInUp 0.8s ease 0.1s both;
+}
+
+.verify-section-title .title-brand {
+    color: #ffffff;
+}
+
+.verify-section-title .title-highlight {
+    background: linear-gradient(135deg, #2e8f33 0%, #4ade80 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.verify-section-description {
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+/* Verify Cards Grid */
+.verify-cards-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.verify-card {
+    position: relative;
+    animation: fadeInUp 0.8s ease both;
+}
+
+.verify-card-inner {
+    position: relative;
+    background: rgba(15, 30, 50, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(46, 143, 51, 0.2);
+    border-radius: 24px;
+    padding: 48px 36px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.verify-card-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(46, 143, 51, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.verify-card:hover .verify-card-inner {
+    transform: translateY(-12px);
+    border-color: rgba(46, 143, 51, 0.5);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(46, 143, 51, 0.15);
+}
+
+.verify-card:hover .verify-card-inner::before {
+    opacity: 1;
+}
+
+.verify-card-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(46, 143, 51, 0.2);
+    border-radius: 16px;
+    margin-bottom: 28px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.verify-card-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(46, 143, 51, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+}
+
+.verify-card:hover .verify-card-icon::before {
+    width: 120px;
+    height: 120px;
+}
+
+.verify-card-icon i {
+    font-size: 32px;
+    color: #2e8f33;
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s ease;
+}
+
+.verify-card:hover .verify-card-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: rgba(46, 143, 51, 0.3);
+}
+
+.verify-card:hover .verify-card-icon i {
+    color: #4ade80;
+    transform: scale(1.1);
+}
+
+.verify-card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.verify-card-description {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 28px;
+    flex-grow: 1;
+}
+
+.verify-learn-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #2e8f33;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.verify-learn-more:hover {
+    color: #4ade80;
+    gap: 14px;
+}
+
+.verify-learn-more i {
+    font-size: 13px;
+    transition: transform 0.3s ease;
+}
+
+.verify-learn-more:hover i {
+    transform: translateX(4px);
+}
+
+/* Responsive Design for Verify Section */
+@media (max-width: 1200px) {
+    .verify-cards-grid {
+        gap: 30px;
+    }
+
+    .verify-card-inner {
+        padding: 40px 30px;
+    }
+
+    .verify-section-title {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 992px) {
+    .agrovue-verify-section {
+        padding: 100px 0;
+    }
+
+    .verify-section-header {
+        margin-bottom: 60px;
+    }
+
+    .verify-section-title {
+        font-size: 42px;
+    }
+
+    .verify-section-description {
+        font-size: 17px;
+    }
+
+    .verify-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 600px;
+    }
+
+    .verify-card-inner {
+        padding: 44px 36px;
+    }
+
+    .verify-gradient-orb.orb-1 {
+        width: 450px;
+        height: 450px;
+    }
+
+    .verify-gradient-orb.orb-2 {
+        width: 400px;
+        height: 400px;
+    }
+
+    .verify-gradient-orb.orb-3 {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .agrovue-verify-section {
+        padding: 80px 0;
+    }
+
+    .verify-section-header {
+        margin-bottom: 50px;
+    }
+
+    .verify-flagship-badge {
+        padding: 10px 20px;
+        font-size: 12px;
+        margin-bottom: 24px;
+    }
+
+    .verify-section-title {
+        font-size: 36px;
+    }
+
+    .verify-section-description {
+        font-size: 16px;
+    }
+
+    .verify-card-inner {
+        padding: 36px 28px;
+    }
+
+    .verify-card-icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    .verify-card-icon i {
+        font-size: 28px;
+    }
+
+    .verify-card-title {
+        font-size: 22px;
+    }
+
+    .verify-card-description {
+        font-size: 14px;
+    }
+
+    .verify-gradient-orb.orb-1 {
+        width: 350px;
+        height: 350px;
+    }
+
+    .verify-gradient-orb.orb-2 {
+        width: 300px;
+        height: 300px;
+    }
+
+    .verify-gradient-orb.orb-3 {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .agrovue-verify-section {
+        padding: 60px 0;
+    }
+
+    .verify-section-header {
+        margin-bottom: 40px;
+    }
+
+    .verify-flagship-badge {
+        padding: 8px 16px;
+        font-size: 11px;
+        margin-bottom: 20px;
+    }
+
+    .verify-flagship-badge i {
+        font-size: 14px;
+    }
+
+    .verify-section-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .verify-section-description {
+        font-size: 15px;
+    }
+
+    .verify-cards-grid {
+        gap: 24px;
+    }
+
+    .verify-card-inner {
+        padding: 32px 24px;
+    }
+
+    .verify-card-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 24px;
+    }
+
+    .verify-card-icon i {
+        font-size: 26px;
+    }
+
+    .verify-card-title {
+        font-size: 20px;
+        margin-bottom: 14px;
+    }
+
+    .verify-card-description {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    .verify-learn-more {
+        font-size: 14px;
+    }
+
+    .verify-gradient-orb.orb-1,
+    .verify-gradient-orb.orb-2,
+    .verify-gradient-orb.orb-3 {
+        width: 250px;
+        height: 250px;
+    }
+}
+
