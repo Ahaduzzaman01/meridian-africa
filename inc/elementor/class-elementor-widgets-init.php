@@ -91,7 +91,6 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'frameworks-marquee',
 				'verification-crisis',
 				'why-now',
-				'system-architecture-solution',
 				'platform-section',
 				'operational-timeline',
 				'policy-alignment-section',
