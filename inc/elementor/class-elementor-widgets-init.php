@@ -101,20 +101,22 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'stakeholder-solutions-section',
 				'comparison-table-section',
 				'cta-section',
-				'institutional-breadcrumb-hero',
 				'tech-specs-section',
 				'integration-section',
-				'contact-breadcrumb',
 				'contact-hero-section',
 				'contact-info-cards',
 				'contact-form-section',
 				'modern-contact-form-section',
 				'legal-breadcrumb',
 				'legal-hero-section',
+				'compliance-hero-section',
 				'quick-navigation-section',
 				'agrovue-verify-section',
 				'scroll-triggered-image-section',
 				'system-architecture-solution',
+				'legal-content-section',
+				'terms-content-section',
+				'security-legal-content',
 			);
 
 			// Allow filtering of widgets
@@ -341,6 +343,10 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 			wp_enqueue_style(
 				'meridian-system-architecture-solution',
 				MERIDIAN_CSS . '/system-architecture-solution.css',
+			// Enqueue legal content section styles (legal.css from original HTML)
+			wp_enqueue_style(
+				'meridian-legal-content-section',
+				get_template_directory_uri() . '/agrovue-landing-html/css/legal.css',
 				array(),
 				MERIDIAN_VERSION
 			);

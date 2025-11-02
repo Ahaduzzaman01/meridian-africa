@@ -123,6 +123,52 @@ class Meridian_Africa_Breadcrumb_Section_Widget extends Widget_Base {
 
 		$this->end_controls_section();
 
+		// Intermediate Pages Section
+		$this->start_controls_section(
+			'intermediate_pages_section',
+			array(
+				'label' => esc_html__( 'Intermediate Pages', 'meridian-africa' ),
+				'tab'   => Controls_Manager::TAB_CONTENT,
+			)
+		);
+
+		$repeater = new Repeater();
+
+		$repeater->add_control(
+			'page_text',
+			array(
+				'label'       => esc_html__( 'Page Text', 'meridian-africa' ),
+				'type'        => Controls_Manager::TEXT,
+				'default'     => esc_html__( 'Page', 'meridian-africa' ),
+				'label_block' => true,
+			)
+		);
+
+		$repeater->add_control(
+			'page_url',
+			array(
+				'label'       => esc_html__( 'Page URL', 'meridian-africa' ),
+				'type'        => Controls_Manager::URL,
+				'placeholder' => esc_html__( 'https://your-link.com', 'meridian-africa' ),
+				'default'     => array(
+					'url' => '#',
+				),
+			)
+		);
+
+		$this->add_control(
+			'intermediate_pages',
+			array(
+				'label'       => esc_html__( 'Add Pages', 'meridian-africa' ),
+				'type'        => Controls_Manager::REPEATER,
+				'fields'      => $repeater->get_controls(),
+				'default'     => array(),
+				'title_field' => '{{{ page_text }}}',
+			)
+		);
+
+		$this->end_controls_section();
+
 		// Current Page Section
 		$this->start_controls_section(
 			'current_page_section',
@@ -274,12 +320,30 @@ class Meridian_Africa_Breadcrumb_Section_Widget extends Widget_Base {
 		<section class="breadcrumb-section">
 			<div class="container">
 				<div class="breadcrumb">
+					<!-- Home Link -->
 					<a href="<?php echo esc_url( $home_url ); ?>" class="breadcrumb-link">
 						<?php if ( 'yes' === $settings['show_home_icon'] ) : ?>
 							<i class="fas fa-home"></i>
 						<?php endif; ?>
 						<span><?php echo esc_html( $settings['home_text'] ); ?></span>
 					</a>
+
+					<?php
+					// Display intermediate pages
+					if ( ! empty( $settings['intermediate_pages'] ) ) :
+						foreach ( $settings['intermediate_pages'] as $page ) :
+							$page_url = ! empty( $page['page_url']['url'] ) ? $page['page_url']['url'] : '#';
+							?>
+							<span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span>
+							<a href="<?php echo esc_url( $page_url ); ?>" class="breadcrumb-link">
+								<span><?php echo esc_html( $page['page_text'] ); ?></span>
+							</a>
+							<?php
+						endforeach;
+					endif;
+					?>
+
+					<!-- Current Page -->
 					<span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span>
 					<span class="breadcrumb-current"><?php echo esc_html( $settings['current_page_text'] ); ?></span>
 				</div>
