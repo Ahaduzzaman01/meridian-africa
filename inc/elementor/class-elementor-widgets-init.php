@@ -114,6 +114,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'quick-navigation-section',
 				'agrovue-verify-section',
 				'scroll-triggered-image-section',
+				'system-architecture-solution',
 			);
 
 			// Allow filtering of widgets
@@ -332,6 +333,14 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 			wp_enqueue_style(
 				'meridian-agrovue-verify-section',
 				MERIDIAN_CSS . '/agrovue-verify-section.css',
+				array(),
+				MERIDIAN_VERSION
+			);
+
+			// Enqueue system architecture solution section styles
+			wp_enqueue_style(
+				'meridian-system-architecture-solution',
+				MERIDIAN_CSS . '/system-architecture-solution.css',
 				array(),
 				MERIDIAN_VERSION
 			);
