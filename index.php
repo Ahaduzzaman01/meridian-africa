@@ -53,5 +53,6 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+// Sidebar removed - search box, recent posts, and recent comments widgets hidden
+// get_sidebar();
 get_footer();

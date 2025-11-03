@@ -18,15 +18,8 @@
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				meridian_africa_posted_on();
-				meridian_africa_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		// Post metadata removed - date and author information hidden
+		?>
 	</header><!-- .entry-header -->
 
 	<?php meridian_africa_post_thumbnail(); ?>
@@ -57,7 +50,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php meridian_africa_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php
+	// Post footer meta removed - categories, comment link, and edit link hidden
+	?>
 </article><!-- #post-<?php the_ID(); ?> -->
