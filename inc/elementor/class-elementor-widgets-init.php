@@ -119,6 +119,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'security-legal-content',
 				'team-hero-section',
 				'compliance-content-section',
+				'founder-profile-section',
 			);
 
 			// Allow filtering of widgets
@@ -411,6 +412,15 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 			wp_enqueue_script(
 				'meridian-modern-contact-form-section',
 				MERIDIAN_JS . '/modern-contact-form-section.js',
+				array( 'jquery' ),
+				MERIDIAN_VERSION,
+				true
+			);
+
+			// Register founders section script
+			wp_register_script(
+				'meridian-founders-js',
+				MERIDIAN_JS . '/founders.js',
 				array( 'jquery' ),
 				MERIDIAN_VERSION,
 				true
