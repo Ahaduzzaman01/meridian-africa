@@ -486,6 +486,10 @@
     text-decoration: none;
 }
 
+.founder-cta .cta-title{
+    font-size: 42px;
+}
+
 /* CTA Section specific button styles */
 .founder-cta .btn-primary {
     background: white;
