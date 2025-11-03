@@ -122,6 +122,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'founder-profile-section',
 				'faq-hero-section',
 				'faq-categories-section',
+				'privacy-rights',
 			);
 
 			// Allow filtering of widgets
