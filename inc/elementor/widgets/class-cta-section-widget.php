@@ -482,6 +482,10 @@ class Meridian_Africa_CTA_Section_Widget extends Widget_Base {
 
 		<!-- CTA Section -->
 		<section class="solutions-cta">
+			<div class="cta-background">
+				<div class="cta-gradient-overlay"></div>
+				<div class="cta-pattern-overlay"></div>
+			</div>
 			<div class="container">
 				<div class="cta-content">
 					<h2><?php echo esc_html( $settings['heading'] ); ?></h2>
