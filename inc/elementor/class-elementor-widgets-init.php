@@ -120,6 +120,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'team-hero-section',
 				'compliance-content-section',
 				'founder-profile-section',
+				'founder-cta-section',
 				'faq-hero-section',
 				'faq-categories-section',
 			);
