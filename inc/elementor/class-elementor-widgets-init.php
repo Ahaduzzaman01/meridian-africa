@@ -121,6 +121,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				'compliance-content-section',
 				'founder-profile-section',
 				'faq-hero-section',
+				'faq-categories-section',
 			);
 
 			// Allow filtering of widgets
@@ -327,6 +328,14 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 				MERIDIAN_VERSION
 			);
 
+			// Register FAQ categories section styles
+			wp_register_style(
+				'meridian-faq-styles',
+				MERIDIAN_CSS . '/faq-categories-section.css',
+				array(),
+				MERIDIAN_VERSION
+			);
+
 			// Enqueue contact form section styles
 			wp_enqueue_style(
 				'meridian-contact-form-section',
@@ -430,6 +439,15 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 			wp_register_script(
 				'meridian-founders-js',
 				MERIDIAN_JS . '/founders.js',
+				array( 'jquery' ),
+				MERIDIAN_VERSION,
+				true
+			);
+
+			// Register FAQ script
+			wp_register_script(
+				'meridian-faq-script',
+				MERIDIAN_JS . '/faq.js',
 				array( 'jquery' ),
 				MERIDIAN_VERSION,
 				true
