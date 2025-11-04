@@ -238,6 +238,64 @@ class Meridian_Africa_Platform_Section_Widget extends Widget_Base {
 			)
 		);
 
+		// Modal Content Section
+		$repeater->add_control(
+			'modal_content_heading',
+			array(
+				'label'     => esc_html__( 'Modal Content', 'meridian-africa' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			)
+		);
+
+		$repeater->add_control(
+			'modal_title',
+			array(
+				'label'   => esc_html__( 'Modal Title', 'meridian-africa' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => 'Field Boundary Detection',
+			)
+		);
+
+		$repeater->add_control(
+			'modal_subtitle',
+			array(
+				'label'   => esc_html__( 'Modal Subtitle', 'meridian-africa' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => 'Precision mapping for agricultural intelligence',
+			)
+		);
+
+		$repeater->add_control(
+			'modal_header_image',
+			array(
+				'label'   => esc_html__( 'Modal Header Image', 'meridian-africa' ),
+				'type'    => Controls_Manager::MEDIA,
+				'default' => array(
+					'url' => '',
+				),
+			)
+		);
+
+		$repeater->add_control(
+			'modal_section1_title',
+			array(
+				'label'   => esc_html__( 'Modal Section Title', 'meridian-africa' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => 'Advanced Satellite Technology',
+			)
+		);
+
+		$repeater->add_control(
+			'modal_section1_description',
+			array(
+				'label'   => esc_html__( 'Modal Section Description', 'meridian-africa' ),
+				'type'    => Controls_Manager::TEXTAREA,
+				'rows'    => 5,
+				'default' => 'Our platform utilizes cutting-edge satellite imagery and AI-powered algorithms to automatically detect and map field boundaries with exceptional accuracy.',
+			)
+		);
+
 		$this->add_control(
 			'capabilities',
 			array(
@@ -290,76 +348,100 @@ class Meridian_Africa_Platform_Section_Widget extends Widget_Base {
 	private function get_default_capabilities() {
 		return array(
 			array(
-				'capability_number'      => 'CAPABILITY 01',
-				'capability_icon'        => 'M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z',
-				'capability_title'       => 'Farm Boundary Detection',
-				'capability_description' => 'Confirms farm existence, validates declared sizes against satellite measurements, detects ghost farmers, and flags discrepancies for field investigation. Processes large-scale programs efficiently.',
-				'tech_detail_1_label'    => 'Accuracy:',
-				'tech_detail_1_value'    => 'High precision',
-				'tech_detail_2_label'    => 'Method:',
-				'tech_detail_2_value'    => 'Boundary detection',
-				'enable_shimmer'         => 'yes',
-				'modal_capability_id'    => 1,
+				'capability_number'           => 'CAPABILITY 01',
+				'capability_icon'             => 'M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z',
+				'capability_title'            => 'Farm Boundary Detection',
+				'capability_description'      => 'Confirms farm existence, validates declared sizes against satellite measurements, detects ghost farmers, and flags discrepancies for field investigation. Processes large-scale programs efficiently.',
+				'tech_detail_1_label'         => 'Accuracy:',
+				'tech_detail_1_value'         => 'High precision',
+				'tech_detail_2_label'         => 'Method:',
+				'tech_detail_2_value'         => 'Boundary detection',
+				'enable_shimmer'              => 'yes',
+				'modal_capability_id'         => 1,
+				'modal_title'                 => 'Field Boundary Detection',
+				'modal_subtitle'              => 'Precision mapping for agricultural intelligence',
+				'modal_section1_title'        => 'Advanced Satellite Technology',
+				'modal_section1_description'  => 'Our platform utilizes cutting-edge satellite imagery and AI-powered algorithms to automatically detect and map field boundaries with exceptional accuracy. This technology enables precise farm area measurement, eliminates manual surveying costs, and provides reliable data for subsidy verification and agricultural program management across diverse landscapes.',
 			),
 			array(
-				'capability_number'      => 'CAPABILITY 02',
-				'capability_icon'        => 'M12 3V6M12 18V21M4.22 4.22L6.34 6.34M17.66 17.66L19.78 19.78M1 12H4M20 12H23M4.22 19.78L6.34 17.66M17.66 6.34L19.78 4.22',
-				'capability_title'       => 'Crop Type Classification',
-				'capability_description' => 'Identifies crop types across African agricultural systems including maize, cassava, sorghum, rice, millet, yams, and groundnuts. Detects intercropping patterns common in smallholder systems.',
-				'tech_detail_1_label'    => 'Method:',
-				'tech_detail_1_value'    => 'Machine learning',
-				'tech_detail_2_label'    => 'Validation:',
-				'tech_detail_2_value'    => 'Ground truth',
-				'enable_shimmer'         => 'yes',
-				'modal_capability_id'    => 2,
+				'capability_number'           => 'CAPABILITY 02',
+				'capability_icon'             => 'M12 3V6M12 18V21M4.22 4.22L6.34 6.34M17.66 17.66L19.78 19.78M1 12H4M20 12H23M4.22 19.78L6.34 17.66M17.66 6.34L19.78 4.22',
+				'capability_title'            => 'Crop Type Classification',
+				'capability_description'      => 'Identifies crop types across African agricultural systems including maize, cassava, sorghum, rice, millet, yams, and groundnuts. Detects intercropping patterns common in smallholder systems.',
+				'tech_detail_1_label'         => 'Method:',
+				'tech_detail_1_value'         => 'Machine learning',
+				'tech_detail_2_label'         => 'Validation:',
+				'tech_detail_2_value'         => 'Ground truth',
+				'enable_shimmer'              => 'yes',
+				'modal_capability_id'         => 2,
+				'modal_title'                 => 'Crop Type Classification',
+				'modal_subtitle'              => 'AI-powered crop identification at scale',
+				'modal_section1_title'        => 'Machine Learning Excellence',
+				'modal_section1_description'  => 'Leverage advanced machine learning models trained on African agricultural systems to accurately identify crop types including maize, cassava, sorghum, rice, millet, yams, and groundnuts. Our system detects intercropping patterns common in smallholder farming, providing unprecedented visibility into agricultural diversity. Every classification is validated against extensive ground truth data collected across multiple growing seasons and agro-ecological zones.',
 			),
 			array(
-				'capability_number'      => 'CAPABILITY 03',
-				'capability_icon'        => 'M22 12H18L15 21L9 3L6 12H2',
-				'capability_title'       => 'Crop Health Monitoring',
-				'capability_description' => 'Tracks vegetation indices throughout the growing season. Provides early warning for drought stress, pest outbreaks, and crop failure. Enables targeted extension services.',
-				'tech_detail_1_label'    => 'Updates:',
-				'tech_detail_1_value'    => 'Every 5 days',
-				'tech_detail_2_label'    => 'Alerts:',
-				'tech_detail_2_value'    => 'Real-time detection',
-				'enable_shimmer'         => 'yes',
-				'modal_capability_id'    => 3,
+				'capability_number'           => 'CAPABILITY 03',
+				'capability_icon'             => 'M22 12H18L15 21L9 3L6 12H2',
+				'capability_title'            => 'Crop Health Monitoring',
+				'capability_description'      => 'Tracks vegetation indices throughout the growing season. Provides early warning for drought stress, pest outbreaks, and crop failure. Enables targeted extension services.',
+				'tech_detail_1_label'         => 'Updates:',
+				'tech_detail_1_value'         => 'Every 5 days',
+				'tech_detail_2_label'         => 'Alerts:',
+				'tech_detail_2_value'         => 'Real-time detection',
+				'enable_shimmer'              => 'yes',
+				'modal_capability_id'         => 3,
+				'modal_title'                 => 'Crop Health Monitoring',
+				'modal_subtitle'              => 'Real-time vegetation health tracking',
+				'modal_section1_title'        => 'Continuous Monitoring',
+				'modal_section1_description'  => 'Track vegetation indices throughout the growing season with updates every 5 days. Our system provides early warning for drought stress, pest outbreaks, and crop failure, enabling targeted extension services and timely interventions that protect farmer livelihoods and program investments. Transform satellite data into actionable insights for agricultural extension officers, program managers, and policymakers.',
 			),
 			array(
-				'capability_number'      => 'CAPABILITY 04',
-				'capability_icon'        => 'M18 20V10M12 20V4M6 20V14',
-				'capability_title'       => 'Yield Prediction',
-				'capability_description' => 'Predicts farm-level and aggregated yields pre-harvest. Informs food security planning, import strategies, and price stabilization policies based on satellite-derived indicators.',
-				'tech_detail_1_label'    => 'Timing:',
-				'tech_detail_1_value'    => 'Pre-harvest',
-				'tech_detail_2_label'    => 'Method:',
-				'tech_detail_2_value'    => 'Predictive modeling',
-				'enable_shimmer'         => '',
-				'modal_capability_id'    => 4,
+				'capability_number'           => 'CAPABILITY 04',
+				'capability_icon'             => 'M18 20V10M12 20V4M6 20V14',
+				'capability_title'            => 'Yield Prediction',
+				'capability_description'      => 'Predicts farm-level and aggregated yields pre-harvest. Informs food security planning, import strategies, and price stabilization policies based on satellite-derived indicators.',
+				'tech_detail_1_label'         => 'Timing:',
+				'tech_detail_1_value'         => 'Pre-harvest',
+				'tech_detail_2_label'         => 'Method:',
+				'tech_detail_2_value'         => 'Predictive modeling',
+				'enable_shimmer'              => '',
+				'modal_capability_id'         => 4,
+				'modal_title'                 => 'Yield Prediction',
+				'modal_subtitle'              => 'Pre-harvest yield forecasting for planning',
+				'modal_section1_title'        => 'Predictive Analytics',
+				'modal_section1_description'  => 'Predict farm-level and aggregated yields pre-harvest using satellite-derived indicators and advanced modeling techniques. Our predictions inform food security planning, import strategies, and price stabilization policies, helping governments and institutions make data-driven decisions. Early yield predictions enable proactive risk management and resource allocation.',
 			),
 			array(
-				'capability_number'      => 'CAPABILITY 05',
-				'capability_icon'        => 'M8 2V5M16 2V5M3.5 9.09H20.5M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z',
-				'capability_title'       => 'Planting/Harvest Dates',
-				'capability_description' => 'Automatically detects planting and harvest dates through vegetation pattern analysis. Verifies compliance with program timing requirements and tracks phenological shifts.',
-				'tech_detail_1_label'    => 'Method:',
-				'tech_detail_1_value'    => 'Pattern analysis',
-				'tech_detail_2_label'    => 'Application:',
-				'tech_detail_2_value'    => 'Compliance',
-				'enable_shimmer'         => '',
-				'modal_capability_id'    => 5,
+				'capability_number'           => 'CAPABILITY 05',
+				'capability_icon'             => 'M8 2V5M16 2V5M3.5 9.09H20.5M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z',
+				'capability_title'            => 'Planting/Harvest Dates',
+				'capability_description'      => 'Automatically detects planting and harvest dates through vegetation pattern analysis. Verifies compliance with program timing requirements and tracks phenological shifts.',
+				'tech_detail_1_label'         => 'Method:',
+				'tech_detail_1_value'         => 'Pattern analysis',
+				'tech_detail_2_label'         => 'Application:',
+				'tech_detail_2_value'         => 'Compliance',
+				'enable_shimmer'              => '',
+				'modal_capability_id'         => 5,
+				'modal_title'                 => 'Planting/Harvest Dates',
+				'modal_subtitle'              => 'Automated phenological tracking',
+				'modal_section1_title'        => 'Pattern Analysis',
+				'modal_section1_description'  => 'Automatically detect planting and harvest dates through vegetation pattern analysis. Our system verifies compliance with program timing requirements, tracks phenological shifts due to climate change, and provides insights into farmer behavior and agricultural practices. Ensure program participants meet timing requirements without costly field visits.',
 			),
 			array(
-				'capability_number'      => 'CAPABILITY 06',
-				'capability_icon'        => 'M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z',
-				'capability_title'       => 'Rangeland Management',
-				'capability_description' => 'Estimates forage biomass, calculates grazing capacity, classifies drought severity, and maps water point availability. Critical for pastoral early warning systems.',
-				'tech_detail_1_label'    => 'Coverage:',
-				'tech_detail_1_value'    => 'Regional scale',
-				'tech_detail_2_label'    => 'Use:',
-				'tech_detail_2_value'    => 'Early warning',
-				'enable_shimmer'         => '',
-				'modal_capability_id'    => 6,
+				'capability_number'           => 'CAPABILITY 06',
+				'capability_icon'             => 'M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z',
+				'capability_title'            => 'Rangeland Management',
+				'capability_description'      => 'Estimates forage biomass, calculates grazing capacity, classifies drought severity, and maps water point availability. Critical for pastoral early warning systems.',
+				'tech_detail_1_label'         => 'Coverage:',
+				'tech_detail_1_value'         => 'Regional scale',
+				'tech_detail_2_label'         => 'Use:',
+				'tech_detail_2_value'         => 'Early warning',
+				'enable_shimmer'              => '',
+				'modal_capability_id'         => 6,
+				'modal_title'                 => 'Rangeland Management',
+				'modal_subtitle'              => 'Pastoral early warning and resource monitoring',
+				'modal_section1_title'        => 'Comprehensive Monitoring',
+				'modal_section1_description'  => 'Estimate forage biomass, calculate grazing capacity, classify drought severity, and map water point availability across vast rangeland areas. Our system provides critical information for pastoral communities, enabling informed decisions about livestock movement and resource management. Support pastoral communities with timely information on rangeland conditions and forage availability.',
 			),
 		);
 	}
@@ -475,16 +557,33 @@ class Meridian_Africa_Platform_Section_Widget extends Widget_Base {
 						<h3 id="modalSectionTitle1"></h3>
 						<p id="modalDescription1"></p>
 					</div>
-					<div class="modal-section modal-highlight">
-						<h3 id="modalSectionTitle2"></h3>
-						<p id="modalDescription2"></p>
-					</div>
-					<div class="modal-image-section">
-						<img id="modalImage" src="" alt="">
-					</div>
 				</div>
 			</div>
 		</div>
+
+		<script type="text/javascript">
+			// Pass modal data from PHP to JavaScript
+			window.platformModalDataFromElementor = window.platformModalDataFromElementor || {};
+			<?php
+			if ( ! empty( $settings['capabilities'] ) ) {
+				foreach ( $settings['capabilities'] as $index => $capability ) {
+					$capability_id = ! empty( $capability['modal_capability_id'] ) ? $capability['modal_capability_id'] : ( $index + 1 );
+
+					// Prepare modal data
+					$modal_data = array(
+						'title'                => ! empty( $capability['modal_title'] ) ? $capability['modal_title'] : $capability['capability_title'],
+						'subtitle'             => ! empty( $capability['modal_subtitle'] ) ? $capability['modal_subtitle'] : '',
+						'headerImage'          => ! empty( $capability['modal_header_image']['url'] ) ? $capability['modal_header_image']['url'] : '',
+						'section1Title'        => ! empty( $capability['modal_section1_title'] ) ? $capability['modal_section1_title'] : '',
+						'section1Description'  => ! empty( $capability['modal_section1_description'] ) ? $capability['modal_section1_description'] : '',
+					);
+					?>
+					window.platformModalDataFromElementor[<?php echo esc_js( $capability_id ); ?>] = <?php echo wp_json_encode( $modal_data ); ?>;
+					<?php
+				}
+			}
+			?>
+		</script>
 
 		<?php
 	}
