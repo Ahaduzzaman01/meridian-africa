@@ -85,6 +85,7 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 
 			// List of widgets to register
 			$elementor_widgets = array(
+				'hero-section',
 				'breadcrumb-section',
 				'solutions-hero-section',
 				'frameworks-marquee',
@@ -162,6 +163,14 @@ if ( ! class_exists( 'Meridian_Africa_Elementor_Widget_Init' ) ) {
 		 */
 		public function load_frontend_styles() {
 			// Font Awesome is already enqueued in functions.php
+
+			// Enqueue hero section styles
+			wp_enqueue_style(
+				'meridian-hero-section',
+				MERIDIAN_CSS . '/hero-section.css',
+				array(),
+				MERIDIAN_VERSION
+			);
 
 			// Enqueue breadcrumb section styles
 			wp_enqueue_style(

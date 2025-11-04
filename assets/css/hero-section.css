@@ -1,0 +1,440 @@
+/**
+ * Hero Section Styles
+ * 
+ * Extracted from agrovue-landing-html/css/style.css
+ * Scoped to prevent conflicts with other theme elements
+ * 
+ * @package Meridian_Africa
+ * @since 1.0.0
+ */
+
+/* ===========================
+   HERO SECTION
+   =========================== */
+
+.hero {
+  position: relative;
+  padding: 50px 0;
+  background-color: #0E172A;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.hero .animated-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      circle at 20% 50%,
+      rgba(46, 143, 51, 0.12) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(14, 165, 233, 0.08) 0%,
+      transparent 50%
+    );
+}
+
+.hero .floating-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.hero .floating-shapes .shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.hero .floating-shapes .shape-1 {
+  width: 300px;
+  height: 300px;
+  background: var(--primary-color);
+  top: -100px;
+  right: -100px;
+  animation: hero-float 15s ease-in-out infinite;
+}
+
+.hero .floating-shapes .shape-2 {
+  width: 200px;
+  height: 200px;
+  background: var(--secondary-blue);
+  bottom: -50px;
+  left: 10%;
+  animation: hero-float 20s ease-in-out infinite 2s;
+}
+
+.hero .floating-shapes .shape-3 {
+  width: 150px;
+  height: 150px;
+  background: var(--accent-orange);
+  top: 50%;
+  right: 10%;
+  animation: hero-float 18s ease-in-out infinite 1s;
+}
+
+.hero .floating-shapes .shape-4 {
+  width: 100px;
+  height: 100px;
+  background: var(--primary-color);
+  bottom: 20%;
+  left: 5%;
+  animation: hero-float 22s ease-in-out infinite 3s;
+}
+
+.hero .hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  min-height: 600px;
+}
+
+.hero .hero-content {
+  animation: hero-slideInLeft 0.8s ease;
+  text-align: left;
+}
+
+.hero .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(45, 122, 62, 0.1);
+  color: var(--primary-green);
+  padding: 10px 16px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  animation: hero-fadeInUp 0.6s ease;
+}
+
+.hero .badge-icon {
+  font-size: 16px;
+}
+
+.hero .hero-title {
+  font-size: 62px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.hero .hero-title .word {
+  display: block;
+  animation: hero-fadeInUp 0.8s ease backwards;
+}
+
+.hero .hero-title .word:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.hero .hero-title .word:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.hero .hero-title .word:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.hero .hero-subtitle {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 32px;
+  line-height: 1.6;
+  animation: hero-fadeInUp 0.8s ease 0.4s backwards;
+}
+
+.hero .hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+  animation: hero-fadeInUp 0.8s ease 0.5s backwards;
+}
+
+.hero .stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero .stat-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.hero .hero-visual {
+  position: relative;
+  height: 450px;
+  animation: hero-slideInRight 0.8s ease;
+}
+
+.hero .satellite-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .satellite {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--primary-dark) 100%
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: var(--white);
+  box-shadow: 0 20px 60px rgba(46, 143, 51, 0.3);
+  animation: hero-float 3s ease-in-out infinite;
+  z-index: 3;
+}
+
+.hero .orbit {
+  position: absolute;
+  border: 2px solid rgba(46, 143, 51, 0.15);
+  border-radius: 50%;
+  animation: hero-rotate 20s linear infinite;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero .orbit-2 {
+  width: 300px;
+  height: 300px;
+  animation-duration: 30s;
+  animation-direction: reverse;
+}
+
+.hero .orbit-3 {
+  width: 400px;
+  height: 400px;
+  border-color: rgba(30, 136, 229, 0.1);
+  animation-duration: 40s;
+}
+
+/* ===========================
+   ANIMATIONS
+   =========================== */
+
+@keyframes hero-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes hero-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero .hero-title {
+    font-size: 44px;
+  }
+
+  .hero .hero-visual {
+    height: 350px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 0;
+  }
+
+  .hero .hero-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero .hero-title {
+    font-size: 36px;
+  }
+
+  .hero .hero-title .word {
+    display: inline;
+  }
+
+  .hero .hero-title .word::after {
+    content: " ";
+  }
+
+  .hero .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero .stat-number {
+    font-size: 24px;
+  }
+
+  .hero .stat-label {
+    font-size: 12px;
+  }
+
+  .hero .hero-visual {
+    height: 300px;
+  }
+
+  .hero .hero-subtitle {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .hero .hero-badge {
+    font-size: 13px;
+    padding: 10px 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero .satellite-container {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero .satellite {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+  }
+
+  .hero .orbit {
+    width: 180px;
+    height: 180px;
+  }
+
+  .hero .orbit-2 {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .hero {
+    padding: 60px 0;
+  }
+
+  .hero .hero-title {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .hero .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .hero .hero-buttons {
+    gap: 12px;
+  }
+
+  .hero .stat-number {
+    font-size: 20px;
+  }
+
+  .hero .stat-label {
+    font-size: 11px;
+  }
+
+  .hero .hero-visual {
+    height: 250px;
+  }
+
+  .hero .satellite {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+  }
+
+  .hero .orbit {
+    width: 150px;
+    height: 150px;
+  }
+
+  .hero .orbit-2 {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero .orbit-3 {
+    width: 300px;
+    height: 300px;
+  }
+}
+
