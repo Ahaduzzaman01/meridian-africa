@@ -80,12 +80,15 @@
 
     /**
      * Open Platform Modal
-     * 
+     *
      * @param {number} capabilityId - The ID of the capability to display
      */
     window.openPlatformModal = function(capabilityId) {
         const modal = document.getElementById('platformModal');
-        const data = platformModalData[capabilityId];
+
+        // Use data from Elementor if available, otherwise fall back to hardcoded data
+        const modalDataSource = window.platformModalDataFromElementor || platformModalData;
+        const data = modalDataSource[capabilityId];
 
         if (!data) {
             console.warn('Platform modal data not found for capability ID:', capabilityId);
@@ -98,18 +101,12 @@
         const modalHeaderImage = document.getElementById('modalHeaderImage');
         const modalSectionTitle1 = document.getElementById('modalSectionTitle1');
         const modalDescription1 = document.getElementById('modalDescription1');
-        const modalSectionTitle2 = document.getElementById('modalSectionTitle2');
-        const modalDescription2 = document.getElementById('modalDescription2');
-        const modalImage = document.getElementById('modalImage');
 
         if (modalTitle) modalTitle.textContent = data.title;
         if (modalSubtitle) modalSubtitle.textContent = data.subtitle;
         if (modalHeaderImage) modalHeaderImage.style.backgroundImage = `url('${data.headerImage}')`;
         if (modalSectionTitle1) modalSectionTitle1.textContent = data.section1Title;
         if (modalDescription1) modalDescription1.textContent = data.section1Description;
-        if (modalSectionTitle2) modalSectionTitle2.textContent = data.section2Title;
-        if (modalDescription2) modalDescription2.textContent = data.section2Description;
-        if (modalImage && data.image) modalImage.src = data.image;
 
         // Show modal
         if (modal) {
