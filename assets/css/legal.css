@@ -233,7 +233,7 @@
 
 .compliance-stat i {
     font-size: 32px;
-    color: var(--primary-color);
+    color: white !important;
 }
 
 .compliance-stat span {
@@ -742,6 +742,7 @@
 
 .contact-method {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 16px;
     background: var(--white);
@@ -2182,9 +2183,9 @@
     }
 
     .compliance-stats {
-        gap: 24px;
+        gap: 20px !important;
         margin-top: 20px;
-        flex-direction: column;
+        flex-direction: row !important;
     }
 
     .compliance-stat i {
@@ -2230,6 +2231,11 @@
 
     .legal-section {
         padding: 20px 0;
+        margin-bottom: 0px !important;
+    }
+
+    .contact-method strong{
+        min-width: unset !important;
     }
 
     .legal-section h2 {
@@ -2257,21 +2263,31 @@
     .section-icon {
         width: 45px;
         height: 45px;
+        min-width: 45px;
         font-size: 22px;
         margin-bottom: 10px;
     }
 
+    .legal-list{
+        margin: 0px !important;
+    }
+
     .protection-wrapper {
         gap: 10px;
-        margin-bottom: 16px;
-        flex-direction: column;
-        align-items: flex-start;
+        margin-bottom: 0px !important;
+        flex-direction: row !important;
+        align-items: center !important;
     }
 
     .intro-section,
     .contact-section {
         padding: 24px 18px;
         border-radius: 14px;
+        margin-bottom: 20px !important;
+    }
+
+    .alert-box{
+        display: block !important;
     }
 
     .highlight-box,
@@ -2313,6 +2329,10 @@
     .team-structure {
         grid-template-columns: 1fr;
         gap: 16px;
+    }
+
+    .certifications-grid{
+        margin: 0px !important;
     }
 
     .usage-card,
@@ -2366,6 +2386,7 @@
     .compliance-cards {
         grid-template-columns: 1fr;
         gap: 16px;
+        margin-bottom: 0px !important;
     }
 
     .compliance-card {
@@ -2397,6 +2418,7 @@
     .security-features-grid {
         grid-template-columns: 1fr;
         gap: 16px;
+        margin-bottom: 0px !important;
     }
 
     .security-feature-card {
@@ -2497,6 +2519,7 @@
 
     .incident-timeline {
         padding-left: 25px;
+        gap: 0px !important;
     }
 
     .timeline-item {
@@ -2658,6 +2681,7 @@
 
     .payment-details {
         gap: 16px;
+        margin: 0px !important;
     }
 
     .payment-item {
@@ -2699,6 +2723,7 @@
     .termination-effects {
         padding: 20px 16px;
         border-radius: 12px;
+        margin-bottom: 0px !important;
     }
 
     .termination-effects h4 {

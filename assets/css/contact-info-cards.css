@@ -90,7 +90,7 @@
 }
 
 .contact-info-card:hover {
-    transform: translateY(-12px);
+    /* transform: translateY(-12px); */
     box-shadow: 0 16px 48px rgba(46, 143, 51, 0.15);
     border-color: var(--primary-color);
 }
@@ -209,10 +209,10 @@
     margin-top: 4px;
 }
 
-.office-card:hover .office-flag {
+/* .office-card:hover .office-flag {
     transform: scale(1.1) rotate(5deg);
     box-shadow: 0 6px 16px rgba(46, 143, 51, 0.2);
-}
+} */
 
 .flag-img {
     width: 100%;
@@ -369,9 +369,10 @@
 
     .office-flag {
         width: 48px;
-        height: 48px;
-        border-radius: 10px;
+        height: 27px;
+        border-radius: 0px;
         border-width: 2px;
+        box-shadow: none;
     }
 
     .office-country {
