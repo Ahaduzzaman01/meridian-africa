@@ -126,39 +126,63 @@ class Meridian_Africa_Contact_Info_Cards_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'show_email_card',
+			array(
+				'label'        => esc_html__( 'Show Email Card', 'meridian-africa' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'Show', 'meridian-africa' ),
+				'label_off'    => esc_html__( 'Hide', 'meridian-africa' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+			)
+		);
+
+		$this->add_control(
 			'email_icon',
 			array(
-				'label'   => esc_html__( 'Icon (Font Awesome class)', 'meridian-africa' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => 'fas fa-envelope',
+				'label'     => esc_html__( 'Icon (Font Awesome class)', 'meridian-africa' ),
+				'type'      => Controls_Manager::TEXT,
+				'default'   => 'fas fa-envelope',
+				'condition' => array(
+					'show_email_card' => 'yes',
+				),
 			)
 		);
 
 		$this->add_control(
 			'email_title',
 			array(
-				'label'   => esc_html__( 'Title', 'meridian-africa' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => 'Email Us',
+				'label'     => esc_html__( 'Title', 'meridian-africa' ),
+				'type'      => Controls_Manager::TEXT,
+				'default'   => 'Email Us',
+				'condition' => array(
+					'show_email_card' => 'yes',
+				),
 			)
 		);
 
 		$this->add_control(
 			'email_description',
 			array(
-				'label'   => esc_html__( 'Description', 'meridian-africa' ),
-				'type'    => Controls_Manager::TEXTAREA,
-				'default' => 'Questions? Want to know how we can help you manage agricultural program at scale? Send us a note, and we\'ll get back to you shortly',
-				'rows'    => 3,
+				'label'     => esc_html__( 'Description', 'meridian-africa' ),
+				'type'      => Controls_Manager::TEXTAREA,
+				'default'   => 'Questions? Want to know how we can help you manage agricultural program at scale? Send us a note, and we\'ll get back to you shortly',
+				'rows'      => 3,
+				'condition' => array(
+					'show_email_card' => 'yes',
+				),
 			)
 		);
 
 		$this->add_control(
 			'email_address',
 			array(
-				'label'   => esc_html__( 'Email Address', 'meridian-africa' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => 'hello@meridianafrica.io',
+				'label'     => esc_html__( 'Email Address', 'meridian-africa' ),
+				'type'      => Controls_Manager::TEXT,
+				'default'   => 'hello@meridianafrica.io',
+				'condition' => array(
+					'show_email_card' => 'yes',
+				),
 			)
 		);
 
@@ -180,39 +204,63 @@ class Meridian_Africa_Contact_Info_Cards_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'show_phone_card',
+			array(
+				'label'        => esc_html__( 'Show Phone Card', 'meridian-africa' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'Show', 'meridian-africa' ),
+				'label_off'    => esc_html__( 'Hide', 'meridian-africa' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+			)
+		);
+
+		$this->add_control(
 			'phone_icon',
 			array(
-				'label'   => esc_html__( 'Icon (Font Awesome class)', 'meridian-africa' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => 'fas fa-phone',
+				'label'     => esc_html__( 'Icon (Font Awesome class)', 'meridian-africa' ),
+				'type'      => Controls_Manager::TEXT,
+				'default'   => 'fas fa-phone',
+				'condition' => array(
+					'show_phone_card' => 'yes',
+				),
 			)
 		);
 
 		$this->add_control(
 			'phone_title',
 			array(
-				'label'   => esc_html__( 'Title', 'meridian-africa' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => 'Call Us',
+				'label'     => esc_html__( 'Title', 'meridian-africa' ),
+				'type'      => Controls_Manager::TEXT,
+				'default'   => 'Call Us',
+				'condition' => array(
+					'show_phone_card' => 'yes',
+				),
 			)
 		);
 
 		$this->add_control(
 			'phone_description',
 			array(
-				'label'   => esc_html__( 'Description', 'meridian-africa' ),
-				'type'    => Controls_Manager::TEXTAREA,
-				'default' => 'Speak directly with our team during business hours (Mon-Fri, 9AM-6PM WAT).',
-				'rows'    => 3,
+				'label'     => esc_html__( 'Description', 'meridian-africa' ),
+				'type'      => Controls_Manager::TEXTAREA,
+				'default'   => 'Speak directly with our team during business hours (Mon-Fri, 9AM-6PM WAT).',
+				'rows'      => 3,
+				'condition' => array(
+					'show_phone_card' => 'yes',
+				),
 			)
 		);
 
 		$this->add_control(
 			'phone_number',
 			array(
-				'label'   => esc_html__( 'Phone Number', 'meridian-africa' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => '+447438993162',
+				'label'     => esc_html__( 'Phone Number', 'meridian-africa' ),
+				'type'      => Controls_Manager::TEXT,
+				'default'   => '+447438993162',
+				'condition' => array(
+					'show_phone_card' => 'yes',
+				),
 			)
 		);
 
@@ -234,30 +282,51 @@ class Meridian_Africa_Contact_Info_Cards_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'show_location_card',
+			array(
+				'label'        => esc_html__( 'Show Location Card', 'meridian-africa' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'Show', 'meridian-africa' ),
+				'label_off'    => esc_html__( 'Hide', 'meridian-africa' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+			)
+		);
+
+		$this->add_control(
 			'location_icon',
 			array(
-				'label'   => esc_html__( 'Icon (Font Awesome class)', 'meridian-africa' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => 'fas fa-map-marker-alt',
+				'label'     => esc_html__( 'Icon (Font Awesome class)', 'meridian-africa' ),
+				'type'      => Controls_Manager::TEXT,
+				'default'   => 'fas fa-map-marker-alt',
+				'condition' => array(
+					'show_location_card' => 'yes',
+				),
 			)
 		);
 
 		$this->add_control(
 			'location_title',
 			array(
-				'label'   => esc_html__( 'Title', 'meridian-africa' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => 'Visit Us',
+				'label'     => esc_html__( 'Title', 'meridian-africa' ),
+				'type'      => Controls_Manager::TEXT,
+				'default'   => 'Visit Us',
+				'condition' => array(
+					'show_location_card' => 'yes',
+				),
 			)
 		);
 
 		$this->add_control(
 			'location_description',
 			array(
-				'label'   => esc_html__( 'Description', 'meridian-africa' ),
-				'type'    => Controls_Manager::TEXTAREA,
-				'default' => 'Our offices are located in two strategic locations',
-				'rows'    => 2,
+				'label'     => esc_html__( 'Description', 'meridian-africa' ),
+				'type'      => Controls_Manager::TEXTAREA,
+				'default'   => 'Our offices are located in two strategic locations',
+				'rows'      => 2,
+				'condition' => array(
+					'show_location_card' => 'yes',
+				),
 			)
 		);
 
@@ -268,16 +337,22 @@ class Meridian_Africa_Contact_Info_Cards_Widget extends Widget_Base {
 				'label'     => esc_html__( 'UK Office', 'meridian-africa' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
+				'condition' => array(
+					'show_location_card' => 'yes',
+				),
 			)
 		);
 
 		$this->add_control(
 			'uk_flag_image',
 			array(
-				'label'   => esc_html__( 'UK Flag Image', 'meridian-africa' ),
-				'type'    => Controls_Manager::MEDIA,
-				'default' => array(
+				'label'     => esc_html__( 'UK Flag Image', 'meridian-africa' ),
+				'type'      => Controls_Manager::MEDIA,
+				'default'   => array(
 					'url' => MERIDIAN_THEME_URI . '/agrovue-landing-html/image/uk.png',
+				),
+				'condition' => array(
+					'show_location_card' => 'yes',
 				),
 			)
 		);
@@ -285,18 +360,24 @@ class Meridian_Africa_Contact_Info_Cards_Widget extends Widget_Base {
 		$this->add_control(
 			'uk_country',
 			array(
-				'label'   => esc_html__( 'Country Name', 'meridian-africa' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => 'United Kingdom',
+				'label'     => esc_html__( 'Country Name', 'meridian-africa' ),
+				'type'      => Controls_Manager::TEXT,
+				'default'   => 'United Kingdom',
+				'condition' => array(
+					'show_location_card' => 'yes',
+				),
 			)
 		);
 
 		$this->add_control(
 			'uk_address',
 			array(
-				'label'   => esc_html__( 'Address', 'meridian-africa' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => '17 Cavendish Street, Sheffield. S37SS',
+				'label'     => esc_html__( 'Address', 'meridian-africa' ),
+				'type'      => Controls_Manager::TEXT,
+				'default'   => '17 Cavendish Street, Sheffield. S37SS',
+				'condition' => array(
+					'show_location_card' => 'yes',
+				),
 			)
 		);
 
@@ -307,16 +388,22 @@ class Meridian_Africa_Contact_Info_Cards_Widget extends Widget_Base {
 				'label'     => esc_html__( 'Nigeria Office', 'meridian-africa' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
+				'condition' => array(
+					'show_location_card' => 'yes',
+				),
 			)
 		);
 
 		$this->add_control(
 			'nigeria_flag_image',
 			array(
-				'label'   => esc_html__( 'Nigeria Flag Image', 'meridian-africa' ),
-				'type'    => Controls_Manager::MEDIA,
-				'default' => array(
+				'label'     => esc_html__( 'Nigeria Flag Image', 'meridian-africa' ),
+				'type'      => Controls_Manager::MEDIA,
+				'default'   => array(
 					'url' => MERIDIAN_THEME_URI . '/agrovue-landing-html/image/naijriya.png',
+				),
+				'condition' => array(
+					'show_location_card' => 'yes',
 				),
 			)
 		);
@@ -324,18 +411,24 @@ class Meridian_Africa_Contact_Info_Cards_Widget extends Widget_Base {
 		$this->add_control(
 			'nigeria_country',
 			array(
-				'label'   => esc_html__( 'Country Name', 'meridian-africa' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => 'Nigeria',
+				'label'     => esc_html__( 'Country Name', 'meridian-africa' ),
+				'type'      => Controls_Manager::TEXT,
+				'default'   => 'Nigeria',
+				'condition' => array(
+					'show_location_card' => 'yes',
+				),
 			)
 		);
 
 		$this->add_control(
 			'nigeria_address',
 			array(
-				'label'   => esc_html__( 'Address', 'meridian-africa' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => '50 Ebitu Ukiwe Street, Jabi, Abuja',
+				'label'     => esc_html__( 'Address', 'meridian-africa' ),
+				'type'      => Controls_Manager::TEXT,
+				'default'   => '50 Ebitu Ukiwe Street, Jabi, Abuja',
+				'condition' => array(
+					'show_location_card' => 'yes',
+				),
 			)
 		);
 
@@ -359,79 +452,85 @@ class Meridian_Africa_Contact_Info_Cards_Widget extends Widget_Base {
 					<p><?php echo esc_html( $settings['header_subtitle'] ); ?></p>
 				</div>
 				<div class="contact-info-grid">
-					<!-- Email Card -->
-					<div class="contact-info-card card-email">
-						<div class="card-icon-wrapper">
-							<div class="contact-info-icon">
-								<i class="<?php echo esc_attr( $settings['email_icon'] ); ?>"></i>
-							</div>
-							<div class="icon-bg"></div>
-						</div>
-						<h3><?php echo esc_html( $settings['email_title'] ); ?></h3>
-						<p><?php echo esc_html( $settings['email_description'] ); ?></p>
-						<a href="mailto:<?php echo esc_attr( $settings['email_address'] ); ?>" class="contact-link">
-							<span><?php echo esc_html( $settings['email_address'] ); ?></span>
-							<i class="fas fa-arrow-right"></i>
-						</a>
-					</div>
-
-					<!-- Phone Card -->
-					<div class="contact-info-card card-phone">
-						<div class="card-icon-wrapper">
-							<div class="contact-info-icon">
-								<i class="<?php echo esc_attr( $settings['phone_icon'] ); ?>"></i>
-							</div>
-							<div class="icon-bg"></div>
-						</div>
-						<h3><?php echo esc_html( $settings['phone_title'] ); ?></h3>
-						<p><?php echo esc_html( $settings['phone_description'] ); ?></p>
-						<a href="tel:<?php echo esc_attr( $settings['phone_number'] ); ?>" class="contact-link">
-							<span><?php echo esc_html( $settings['phone_number'] ); ?></span>
-							<i class="fas fa-arrow-right"></i>
-						</a>
-					</div>
-
-					<!-- Location Card -->
-					<div class="contact-info-card card-location">
-						<div class="card-icon-wrapper">
-							<div class="contact-info-icon">
-								<i class="<?php echo esc_attr( $settings['location_icon'] ); ?>"></i>
-							</div>
-							<div class="icon-bg"></div>
-						</div>
-						<h3><?php echo esc_html( $settings['location_title'] ); ?></h3>
-						<p><?php echo esc_html( $settings['location_description'] ); ?></p>
-
-						<div class="office-locations">
-							<!-- UK Office -->
-							<div class="office-card">
-								<div class="office-flag">
-									<img src="<?php echo esc_url( $settings['uk_flag_image']['url'] ); ?>" alt="<?php echo esc_attr( $settings['uk_country'] ); ?> Flag" class="flag-img">
+					<?php if ( 'yes' === $settings['show_email_card'] ) : ?>
+						<!-- Email Card -->
+						<div class="contact-info-card card-email">
+							<div class="card-icon-wrapper">
+								<div class="contact-info-icon">
+									<i class="<?php echo esc_attr( $settings['email_icon'] ); ?>"></i>
 								</div>
-								<div class="office-details">
-									<h4 class="office-country"><?php echo esc_html( $settings['uk_country'] ); ?></h4>
-									<p class="office-address">
-										<i class="fas fa-location-dot"></i>
-										<?php echo esc_html( $settings['uk_address'] ); ?>
-									</p>
-								</div>
+								<div class="icon-bg"></div>
 							</div>
+							<h3><?php echo esc_html( $settings['email_title'] ); ?></h3>
+							<p><?php echo esc_html( $settings['email_description'] ); ?></p>
+							<a href="mailto:<?php echo esc_attr( $settings['email_address'] ); ?>" class="contact-link">
+								<span><?php echo esc_html( $settings['email_address'] ); ?></span>
+								<i class="fas fa-arrow-right"></i>
+							</a>
+						</div>
+					<?php endif; ?>
 
-							<!-- Nigeria Office -->
-							<div class="office-card">
-								<div class="office-flag">
-									<img src="<?php echo esc_url( $settings['nigeria_flag_image']['url'] ); ?>" alt="<?php echo esc_attr( $settings['nigeria_country'] ); ?> Flag" class="flag-img">
+					<?php if ( 'yes' === $settings['show_phone_card'] ) : ?>
+						<!-- Phone Card -->
+						<div class="contact-info-card card-phone">
+							<div class="card-icon-wrapper">
+								<div class="contact-info-icon">
+									<i class="<?php echo esc_attr( $settings['phone_icon'] ); ?>"></i>
 								</div>
-								<div class="office-details">
-									<h4 class="office-country"><?php echo esc_html( $settings['nigeria_country'] ); ?></h4>
-									<p class="office-address">
-										<i class="fas fa-location-dot"></i>
-										<?php echo esc_html( $settings['nigeria_address'] ); ?>
-									</p>
+								<div class="icon-bg"></div>
+							</div>
+							<h3><?php echo esc_html( $settings['phone_title'] ); ?></h3>
+							<p><?php echo esc_html( $settings['phone_description'] ); ?></p>
+							<a href="tel:<?php echo esc_attr( $settings['phone_number'] ); ?>" class="contact-link">
+								<span><?php echo esc_html( $settings['phone_number'] ); ?></span>
+								<i class="fas fa-arrow-right"></i>
+							</a>
+						</div>
+					<?php endif; ?>
+
+					<?php if ( 'yes' === $settings['show_location_card'] ) : ?>
+						<!-- Location Card -->
+						<div class="contact-info-card card-location">
+							<div class="card-icon-wrapper">
+								<div class="contact-info-icon">
+									<i class="<?php echo esc_attr( $settings['location_icon'] ); ?>"></i>
+								</div>
+								<div class="icon-bg"></div>
+							</div>
+							<h3><?php echo esc_html( $settings['location_title'] ); ?></h3>
+							<p><?php echo esc_html( $settings['location_description'] ); ?></p>
+
+							<div class="office-locations">
+								<!-- UK Office -->
+								<div class="office-card">
+									<div class="office-flag">
+										<img src="<?php echo esc_url( $settings['uk_flag_image']['url'] ); ?>" alt="<?php echo esc_attr( $settings['uk_country'] ); ?> Flag" class="flag-img">
+									</div>
+									<div class="office-details">
+										<h4 class="office-country"><?php echo esc_html( $settings['uk_country'] ); ?></h4>
+										<p class="office-address">
+											<i class="fas fa-location-dot"></i>
+											<?php echo esc_html( $settings['uk_address'] ); ?>
+										</p>
+									</div>
+								</div>
+
+								<!-- Nigeria Office -->
+								<div class="office-card">
+									<div class="office-flag">
+										<img src="<?php echo esc_url( $settings['nigeria_flag_image']['url'] ); ?>" alt="<?php echo esc_attr( $settings['nigeria_country'] ); ?> Flag" class="flag-img">
+									</div>
+									<div class="office-details">
+										<h4 class="office-country"><?php echo esc_html( $settings['nigeria_country'] ); ?></h4>
+										<p class="office-address">
+											<i class="fas fa-location-dot"></i>
+											<?php echo esc_html( $settings['nigeria_address'] ); ?>
+										</p>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</section>

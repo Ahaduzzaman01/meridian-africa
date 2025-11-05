@@ -100,6 +100,126 @@ class Meridian_Africa_Compliance_Content_Section_Widget extends Widget_Base {
 			)
 		);
 
+		// Sidebar Navigation Links
+		$this->add_control(
+			'sidebar_links_heading',
+			array(
+				'label'     => esc_html__( 'Navigation Links', 'meridian-africa' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			)
+		);
+
+		// Privacy Policy Link
+		$this->add_control(
+			'sidebar_privacy_label',
+			array(
+				'label'   => esc_html__( 'Privacy Policy Label', 'meridian-africa' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => 'Privacy Policy',
+			)
+		);
+
+		$this->add_control(
+			'sidebar_privacy_link',
+			array(
+				'label'   => esc_html__( 'Privacy Policy Link', 'meridian-africa' ),
+				'type'    => Controls_Manager::URL,
+				'default' => array(
+					'url' => '#',
+				),
+			)
+		);
+
+		// Terms of Service Link
+		$this->add_control(
+			'sidebar_terms_label',
+			array(
+				'label'   => esc_html__( 'Terms of Service Label', 'meridian-africa' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => 'Terms of Service',
+			)
+		);
+
+		$this->add_control(
+			'sidebar_terms_link',
+			array(
+				'label'   => esc_html__( 'Terms of Service Link', 'meridian-africa' ),
+				'type'    => Controls_Manager::URL,
+				'default' => array(
+					'url' => '#',
+				),
+			)
+		);
+
+		// Security Link
+		$this->add_control(
+			'sidebar_security_label',
+			array(
+				'label'   => esc_html__( 'Security Label', 'meridian-africa' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => 'Security',
+			)
+		);
+
+		$this->add_control(
+			'sidebar_security_link',
+			array(
+				'label'   => esc_html__( 'Security Link', 'meridian-africa' ),
+				'type'    => Controls_Manager::URL,
+				'default' => array(
+					'url' => '#',
+				),
+			)
+		);
+
+		// Compliance Link
+		$this->add_control(
+			'sidebar_compliance_label',
+			array(
+				'label'   => esc_html__( 'Compliance Label', 'meridian-africa' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => 'Compliance',
+			)
+		);
+
+		$this->add_control(
+			'sidebar_compliance_link',
+			array(
+				'label'   => esc_html__( 'Compliance Link', 'meridian-africa' ),
+				'type'    => Controls_Manager::URL,
+				'default' => array(
+					'url' => '#',
+				),
+			)
+		);
+
+		// Active Link Selection
+		$this->add_control(
+			'sidebar_active_link',
+			array(
+				'label'   => esc_html__( 'Active Link', 'meridian-africa' ),
+				'type'    => Controls_Manager::SELECT,
+				'default' => 'compliance',
+				'options' => array(
+					'privacy'    => esc_html__( 'Privacy Policy', 'meridian-africa' ),
+					'terms'      => esc_html__( 'Terms of Service', 'meridian-africa' ),
+					'security'   => esc_html__( 'Security', 'meridian-africa' ),
+					'compliance' => esc_html__( 'Compliance', 'meridian-africa' ),
+				),
+			)
+		);
+
+		// CTA Section
+		$this->add_control(
+			'sidebar_cta_heading',
+			array(
+				'label'     => esc_html__( 'Call to Action', 'meridian-africa' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			)
+		);
+
 		$this->add_control(
 			'sidebar_cta_title',
 			array(
@@ -574,21 +694,49 @@ class Meridian_Africa_Compliance_Content_Section_Widget extends Widget_Base {
 						<div class="sidebar-sticky">
 							<h4><?php echo esc_html( $settings['sidebar_title'] ); ?></h4>
 							<nav class="sidebar-nav">
-								<a href="privacy.html" class="sidebar-link">
+								<?php
+								// Privacy Policy Link
+								$privacy_url = ! empty( $settings['sidebar_privacy_link']['url'] ) ? $settings['sidebar_privacy_link']['url'] : '#';
+								$privacy_target = ! empty( $settings['sidebar_privacy_link']['is_external'] ) ? ' target="_blank"' : '';
+								$privacy_nofollow = ! empty( $settings['sidebar_privacy_link']['nofollow'] ) ? ' rel="nofollow"' : '';
+								$privacy_active = ( $settings['sidebar_active_link'] === 'privacy' ) ? ' active' : '';
+								?>
+								<a href="<?php echo esc_url( $privacy_url ); ?>"<?php echo $privacy_target . $privacy_nofollow; ?> class="sidebar-link<?php echo $privacy_active; ?>">
 									<i class="fas fa-shield-alt"></i>
-									Privacy Policy
+									<?php echo esc_html( $settings['sidebar_privacy_label'] ); ?>
 								</a>
-								<a href="terms.html" class="sidebar-link">
+								<?php
+								// Terms of Service Link
+								$terms_url = ! empty( $settings['sidebar_terms_link']['url'] ) ? $settings['sidebar_terms_link']['url'] : '#';
+								$terms_target = ! empty( $settings['sidebar_terms_link']['is_external'] ) ? ' target="_blank"' : '';
+								$terms_nofollow = ! empty( $settings['sidebar_terms_link']['nofollow'] ) ? ' rel="nofollow"' : '';
+								$terms_active = ( $settings['sidebar_active_link'] === 'terms' ) ? ' active' : '';
+								?>
+								<a href="<?php echo esc_url( $terms_url ); ?>"<?php echo $terms_target . $terms_nofollow; ?> class="sidebar-link<?php echo $terms_active; ?>">
 									<i class="fas fa-file-contract"></i>
-									Terms of Service
+									<?php echo esc_html( $settings['sidebar_terms_label'] ); ?>
 								</a>
-								<a href="security.html" class="sidebar-link">
+								<?php
+								// Security Link
+								$security_url = ! empty( $settings['sidebar_security_link']['url'] ) ? $settings['sidebar_security_link']['url'] : '#';
+								$security_target = ! empty( $settings['sidebar_security_link']['is_external'] ) ? ' target="_blank"' : '';
+								$security_nofollow = ! empty( $settings['sidebar_security_link']['nofollow'] ) ? ' rel="nofollow"' : '';
+								$security_active = ( $settings['sidebar_active_link'] === 'security' ) ? ' active' : '';
+								?>
+								<a href="<?php echo esc_url( $security_url ); ?>"<?php echo $security_target . $security_nofollow; ?> class="sidebar-link<?php echo $security_active; ?>">
 									<i class="fas fa-lock"></i>
-									Security
+									<?php echo esc_html( $settings['sidebar_security_label'] ); ?>
 								</a>
-								<a href="compliance.html" class="sidebar-link active">
+								<?php
+								// Compliance Link
+								$compliance_url = ! empty( $settings['sidebar_compliance_link']['url'] ) ? $settings['sidebar_compliance_link']['url'] : '#';
+								$compliance_target = ! empty( $settings['sidebar_compliance_link']['is_external'] ) ? ' target="_blank"' : '';
+								$compliance_nofollow = ! empty( $settings['sidebar_compliance_link']['nofollow'] ) ? ' rel="nofollow"' : '';
+								$compliance_active = ( $settings['sidebar_active_link'] === 'compliance' ) ? ' active' : '';
+								?>
+								<a href="<?php echo esc_url( $compliance_url ); ?>"<?php echo $compliance_target . $compliance_nofollow; ?> class="sidebar-link<?php echo $compliance_active; ?>">
 									<i class="fas fa-check-circle"></i>
-									Compliance
+									<?php echo esc_html( $settings['sidebar_compliance_label'] ); ?>
 								</a>
 							</nav>
 
