@@ -2540,6 +2540,9 @@ strong.margin-faq {
   color: var(--primary-green);
 }
 
+.faq-section .faq-category .category-header h2{
+  font-size: 22px;
+}
 
 
 
