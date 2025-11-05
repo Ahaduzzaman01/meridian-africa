@@ -483,6 +483,17 @@ function meridian_africa_footer_customizer( $wp_customize ) {
 		'type'    => 'text',
 	) );
 
+	$wp_customize->add_setting( 'footer_address_2', array(
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( 'footer_address_2', array(
+		'label'   => __( 'Footer Address 2', 'meridian-africa' ),
+		'section' => 'meridian_footer_settings',
+		'type'    => 'text',
+	) );
+
 	// Section Titles
 	$wp_customize->add_setting( 'footer_quicklinks_title', array(
 		'default'           => 'Quick Links',

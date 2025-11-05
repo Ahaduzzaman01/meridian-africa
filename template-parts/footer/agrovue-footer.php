@@ -40,6 +40,7 @@ $footer_instagram = get_theme_mod( 'footer_instagram', '#' );
 $footer_email = get_theme_mod( 'footer_email', 'hello@meridianafrica.io' );
 $footer_phone = get_theme_mod( 'footer_phone', '+447438993162' );
 $footer_address = get_theme_mod( 'footer_address', '17 Cavendish Street, Sheffield. S37SS. United Kingdom' );
+$footer_address_2 = get_theme_mod( 'footer_address_2', '' );
 
 // Copyright text
 $footer_copyright = get_theme_mod( 'footer_copyright', '&copy; ' . date( 'Y' ) . ' Meridian Africa. All rights reserved.' );
@@ -158,9 +159,13 @@ $footer_copyright = get_theme_mod( 'footer_copyright', '&copy; ' . date( 'Y' ) .
 						<?php echo esc_html( $footer_phone ); ?>
 					</p>
 				<?php endif; ?>
-				
+
 				<?php if ( $footer_address ) : ?>
 					<p><i class="fas fa-map-marker-alt"></i> <?php echo esc_html( $footer_address ); ?></p>
+			<?php endif; ?>
+
+			<?php if ( $footer_address_2 ) : ?>
+				<p><i class="fas fa-map-marker-alt"></i> <?php echo esc_html( $footer_address_2 ); ?></p>
 				<?php endif; ?>
 			</div>
 		</div>
