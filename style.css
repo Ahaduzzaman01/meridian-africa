@@ -2346,6 +2346,18 @@ small, .small-text {
   .cta-feature-item {
     font-size: 14px;
   }
+
+  section#home.hero .hero-buttons{
+    flex-direction: row;
+  }
+
+  section#home.hero .hero-buttons a.btn-large{
+    width: fit-content;
+  }
+
+  section#platform.platform .platform-card{
+    padding: 0px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -3781,6 +3793,11 @@ strong.margin-faq {
   /* background: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.3); */
   transform: translateY(-2px);
+}
+
+#development-programs.development-programs .program-card .program-header .country-flag{
+  margin-top: 0px;
+  display: flex;
 }
 
 .flag-icon {
@@ -6650,6 +6667,14 @@ strong.margin-faq {
     .pillar-content-zone {
         padding: 28px;
     }
+
+    .scroll-image-section .scrollable-content-container .content-block{
+        padding-top: 0px;
+    }
+
+    .scroll-image-section .scrollable-content-container .content-block .content-stats{
+        margin-top: 0px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -6678,6 +6703,11 @@ strong.margin-faq {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
         padding: 30px;
+    }
+
+    .scroll-image-section .scrollable-content-container .content-block{
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
 
@@ -6750,6 +6780,16 @@ strong.margin-faq {
     .trust-sublabel {
         font-size: 12px;
     }
+
+    .scroll-image-section .scroll-image-wrapper .image-label{
+        font-size: 16px
+    }
+
+    .scroll-image-section .scroll-image-wrapper .image-label::before{
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -6795,6 +6835,19 @@ strong.margin-faq {
 
     .sovereignty-trust-bar {
         padding: 20px;
+    }
+
+    .scroll-image-section .scroll-image-wrapper .image-label{
+        font-size: 14px;
+    }
+
+    .scroll-image-section .scroll-image-wrapper .image-label::before{
+        width: 6px;
+        height: 6px;
+    }
+
+    #development-programs.development-programs .program-card .program-header h3{
+      margin-bottom: 0px;
     }
 }
 
