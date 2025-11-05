@@ -106,9 +106,9 @@ $footer_copyright = get_theme_mod( 'footer_copyright', '&copy; ' . date( 'Y' ) .
 					?>
 					<ul>
 						<li><a href="<?php echo esc_url( home_url( '/solutions' ) ); ?>">Solutions</a></li>
+						<li><a href="<?php echo esc_url( home_url( '/team' ) ); ?>">Team</a></li>
 						<li><a href="<?php echo esc_url( home_url( '/faq' ) ); ?>">FAQ</a></li>
 						<li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a></li>
-						<li><a href="<?php echo esc_url( home_url( '/team' ) ); ?>">Team</a></li>
 					</ul>
 					<?php
 				}
